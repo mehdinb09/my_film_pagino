@@ -3,12 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>فیلم‌ها | MY FILM</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      color: white;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 20px 25px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .movies {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .movie {
+      background: #171717;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .poster {
+      height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #292929, #111);
+      font-size: 80px;
+    }
+
+    .movie-info {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .movie-info h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    .movie-info p {
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .watch {
+      display: inline-block;
+      background: #e50914;
+      color: white;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .watch:hover {
+      background: #ff1a25;
+    }
+
+    .back {
+      display: block;
+      width: fit-content;
+      margin: 35px auto;
+      color: #aaa;
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>🎬 فیلم‌ها</h1>
-  <p>به بخش فیلم‌ها خوش آمدید.</p>
+  <header>
+    <h1>🎬 فیلم‌های MY FILM</h1>
+    <p>فیلم مورد نظرت رو انتخاب کن</p>
+  </header>
+
+  <section class="movies">
+
+    <div class="movie">
+
+      <div class="poster">
+        🎬
+      </div>
+
+      <div class="movie-info">
+
+        <h2>فیلم اول</h2>
+
+        <p>
+          برای تماشای فیلم روی دکمه زیر کلیک کنید.
+        </p>
+
+        <a href="#" class="watch">
+          ▶️ تماشای فیلم
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <a href="index.html" class="back">
+    ← بازگشت به صفحه اصلی
+  </a>
 
 </body>
-</html>
+  </html>
