@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MY FILM PAGINO</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0f;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #171721, #09090d);
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid #292933;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #00e5ff;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 55px 20px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, #172c35 0%, #0b0b0f 60%);
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #bbb;
+      line-height: 2;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 28px;
+      border-radius: 12px;
+      background: #00d9ff;
+      color: #001014;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #00f0ff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 18px;
+    }
+
+    .title {
+      font-size: 23px;
+      margin-bottom: 20px;
+      border-right: 4px solid #00d9ff;
+      padding-right: 10px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #15151d;
+      border: 1px solid #292933;
+      border-radius: 16px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00d9ff;
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #999;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      text-align: center;
+      background: #101016;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .notice {
+      margin-top: 30px;
+      padding: 18px;
+      border-radius: 14px;
+      background: #15151d;
+      border: 1px solid #292933;
+      text-align: center;
+      color: #bbb;
+      line-height: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🎬 MY FILM PAGINO</div>
+    <div class="subtitle">سایت معرفی فیلم و سرگرمی</div>
+  </header>
+
+  <section class="hero">
+    <h1>به دنیای فیلم خوش آمدید 🎥</h1>
+
+    <p>
+      جدیدترین فیلم‌ها، سریال‌ها و مطالب سینمایی را
+      در یک صفحه ساده و زیبا دنبال کنید.
+    </p>
+
+    <a href="#movies" class="btn">
+      مشاهده بخش‌ها
+    </a>
+  </section>
+
+  <main class="container" id="movies">
+
+    <h2 class="title">بخش‌های سایت</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">🎬</div>
+        <h3>فیلم‌ها</h3>
+        <p>
+          معرفی فیلم‌های جدید و محبوب
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📺</div>
+        <h3>سریال‌ها</h3>
+        <p>
+          جدیدترین سریال‌ها و مجموعه‌ها
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⭐</div>
+        <h3>محبوب‌ترین‌ها</h3>
+        <p>
+          فیلم‌ها و سریال‌های پرطرفدار
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>جدیدترین‌ها</h3>
+        <p>
+          تازه‌ترین مطالب و آثار سینمایی
+        </p>
+      </div>
+
+    </div>
+
+    <div class="notice">
+      🍿 این سایت در حال توسعه است.
+      <br>
+      به‌زودی بخش‌های بیشتری به آن اضافه می‌شود.
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 MY FILM PAGINO
+  </footer>
+
+</body>
+  </html>
