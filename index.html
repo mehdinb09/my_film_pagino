@@ -1,221 +1,232 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MY FILM PAGINO</title>
+<title>MY FILM</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Tahoma, Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Tahoma,Arial,sans-serif;
+}
 
-    body {
-      background: #0b0b0f;
-      color: white;
-      min-height: 100vh;
-    }
+body{
+  min-height:100vh;
+  background:#08090d;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-    header {
-      background: linear-gradient(135deg, #171721, #09090d);
-      padding: 25px 20px;
-      text-align: center;
-      border-bottom: 1px solid #292933;
-    }
+.login-box{
+  width:90%;
+  max-width:420px;
+  background:#11131a;
+  border:1px solid #252936;
+  border-radius:25px;
+  padding:30px 22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  text-align:center;
+}
 
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: #00e5ff;
-      margin-bottom: 8px;
-    }
+.logo{
+  font-size:32px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
 
-    .subtitle {
-      color: #aaa;
-      font-size: 14px;
-    }
+.logo span{
+  color:#e50914;
+}
 
-    .hero {
-      padding: 55px 20px;
-      text-align: center;
-      background:
-        radial-gradient(circle at center, #172c35 0%, #0b0b0f 60%);
-    }
+.subtitle{
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:30px;
+}
 
-    .hero h1 {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
+h2{
+  margin-bottom:10px;
+}
 
-    .hero p {
-      color: #bbb;
-      line-height: 2;
-      max-width: 600px;
-      margin: auto;
-    }
+.input{
+  width:100%;
+  padding:16px;
+  margin-top:18px;
+  border-radius:14px;
+  border:1px solid #30333d;
+  background:#08090d;
+  color:white;
+  font-size:16px;
+  outline:none;
+  direction:ltr;
+  text-align:left;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 28px;
-      border-radius: 12px;
-      background: #00d9ff;
-      color: #001014;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.input:focus{
+  border-color:#e50914;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-      background: #00f0ff;
-    }
+.btn{
+  width:100%;
+  padding:16px;
+  margin-top:15px;
+  border:0;
+  border-radius:14px;
+  background:#e50914;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 18px;
-    }
+.btn:hover{
+  background:#c70710;
+}
 
-    .title {
-      font-size: 23px;
-      margin-bottom: 20px;
-      border-right: 4px solid #00d9ff;
-      padding-right: 10px;
-    }
+.otp-box{
+  display:none;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-    }
+.back{
+  margin-top:15px;
+  color:#aaa;
+  cursor:pointer;
+  font-size:14px;
+}
 
-    .card {
-      background: #15151d;
-      border: 1px solid #292933;
-      border-radius: 16px;
-      padding: 25px 15px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #00d9ff;
-    }
-
-    .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #999;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 25px;
-      text-align: center;
-      background: #101016;
-      color: #777;
-      font-size: 13px;
-    }
-
-    .notice {
-      margin-top: 30px;
-      padding: 18px;
-      border-radius: 14px;
-      background: #15151d;
-      border: 1px solid #292933;
-      text-align: center;
-      color: #bbb;
-      line-height: 2;
-    }
-  </style>
+.message{
+  margin-top:15px;
+  color:#aaa;
+  font-size:13px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">🎬 MY FILM PAGINO</div>
-    <div class="subtitle">سایت معرفی فیلم و سرگرمی</div>
-  </header>
+<div class="login-box">
 
-  <section class="hero">
-    <h1>به دنیای فیلم خوش آمدید 🎥</h1>
+  <div class="logo">
+    MY <span>FILM</span>
+  </div>
 
-    <p>
-      جدیدترین فیلم‌ها، سریال‌ها و مطالب سینمایی را
-      در یک صفحه ساده و زیبا دنبال کنید.
-    </p>
+  <div class="subtitle">
+    برای ورود به سایت شماره موبایل خود را وارد کنید
+  </div>
 
-    <a href="#movies" class="btn">
-      مشاهده بخش‌ها
-    </a>
-  </section>
+  <!-- شماره موبایل -->
+  <div id="phoneBox">
 
-  <main class="container" id="movies">
+    <h2>ورود / ثبت‌نام</h2>
 
-    <h2 class="title">بخش‌های سایت</h2>
+    <input
+      id="phone"
+      class="input"
+      type="tel"
+      placeholder="09123456789"
+      maxlength="11"
+    >
 
-    <div class="cards">
+    <button class="btn" onclick="sendCode()">
+      ارسال کد تأیید
+    </button>
 
-      <div class="card">
-        <div class="icon">🎬</div>
-        <h3>فیلم‌ها</h3>
-        <p>
-          معرفی فیلم‌های جدید و محبوب
-        </p>
-      </div>
+    <div class="message" id="phoneMessage"></div>
 
-      <div class="card">
-        <div class="icon">📺</div>
-        <h3>سریال‌ها</h3>
-        <p>
-          جدیدترین سریال‌ها و مجموعه‌ها
-        </p>
-      </div>
+  </div>
 
-      <div class="card">
-        <div class="icon">⭐</div>
-        <h3>محبوب‌ترین‌ها</h3>
-        <p>
-          فیلم‌ها و سریال‌های پرطرفدار
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="icon">🔥</div>
-        <h3>جدیدترین‌ها</h3>
-        <p>
-          تازه‌ترین مطالب و آثار سینمایی
-        </p>
-      </div>
+  <!-- کد تأیید -->
+  <div class="otp-box" id="otpBox">
 
+    <h2>کد تأیید</h2>
+
+    <div class="subtitle">
+      کد ارسال‌شده را وارد کنید
     </div>
 
-    <div class="notice">
-      🍿 این سایت در حال توسعه است.
-      <br>
-      به‌زودی بخش‌های بیشتری به آن اضافه می‌شود.
+    <input
+      id="otp"
+      class="input"
+      type="tel"
+      placeholder="123456"
+      maxlength="6"
+    >
+
+    <button class="btn" onclick="verifyCode()">
+      تأیید و ورود
+    </button>
+
+    <div class="message" id="otpMessage"></div>
+
+    <div class="back" onclick="backToPhone()">
+      تغییر شماره موبایل
     </div>
 
-  </main>
+  </div>
 
-  <footer>
-    © 2026 MY FILM PAGINO
-  </footer>
+</div>
+
+
+<script>
+
+function sendCode(){
+
+  const phone = document.getElementById("phone").value.trim();
+
+  if(!/^09\d{9}$/.test(phone)){
+    document.getElementById("phoneMessage").innerText =
+      "لطفاً شماره موبایل ایرانی را درست وارد کنید.";
+    return;
+  }
+
+  document.getElementById("phoneMessage").innerText =
+    "در حال ارسال کد...";
+
+  /*
+    فعلاً SMS واقعی وصل نیست.
+    بعداً API سرویس پیامک را اینجا وصل می‌کنیم.
+  */
+
+  setTimeout(function(){
+
+    document.getElementById("phoneBox").style.display="none";
+    document.getElementById("otpBox").style.display="block";
+
+  },700);
+}
+
+
+function verifyCode(){
+
+  const code = document.getElementById("otp").value.trim();
+
+  if(!/^\d{6}$/.test(code)){
+    document.getElementById("otpMessage").innerText =
+      "کد باید ۶ رقمی باشد.";
+    return;
+  }
+
+  document.getElementById("otpMessage").innerText =
+    "کد وارد شد. مرحله اتصال به سرور بعداً انجام می‌شود.";
+
+}
+
+
+function backToPhone(){
+
+  document.getElementById("otpBox").style.display="none";
+  document.getElementById("phoneBox").style.display="block";
+
+}
+
+</script>
 
 </body>
-  </html>
+      </html>
