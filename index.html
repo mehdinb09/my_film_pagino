@@ -1,365 +1,57 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY FILM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY FILM</title>
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Tahoma,Arial,sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      color: white;
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+    }
 
-body{
-  background:#08090d;
-  color:#fff;
-  min-height:100vh;
-}
+    .container {
+      padding: 80px 20px;
+    }
 
-/* LOGIN */
-#loginPage{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
+    h1 {
+      font-size: 35px;
+      margin-bottom: 50px;
+    }
 
-.login-box{
-  width:100%;
-  max-width:400px;
-  background:#11131a;
-  border:1px solid #292d38;
-  border-radius:25px;
-  padding:35px 25px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
+    .film-button {
+      display: inline-block;
+      padding: 18px 35px;
+      background: #e50914;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 5px 20px rgba(229, 9, 20, 0.3);
+    }
 
-.logo{
-  font-size:34px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.logo span{
-  color:#e50914;
-}
-
-.subtitle{
-  color:#aaa;
-  font-size:14px;
-  margin-bottom:25px;
-}
-
-input{
-  width:100%;
-  padding:16px;
-  border-radius:14px;
-  border:1px solid #333744;
-  background:#08090d;
-  color:#fff;
-  outline:none;
-  font-size:16px;
-  text-align:center;
-}
-
-input:focus{
-  border-color:#e50914;
-}
-
-button{
-  width:100%;
-  margin-top:15px;
-  padding:16px;
-  border:0;
-  border-radius:14px;
-  background:#e50914;
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#c70710;
-}
-
-#error{
-  color:#ff5252;
-  margin-top:15px;
-  font-size:14px;
-}
-
-/* MAIN SITE */
-#mainPage{
-  display:none;
-}
-
-header{
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#101218;
-  border-bottom:1px solid #252833;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo-small{
-  font-size:25px;
-  font-weight:bold;
-}
-
-.logo-small span{
-  color:#e50914;
-}
-
-.logout{
-  width:auto;
-  margin:0;
-  padding:9px 15px;
-  font-size:13px;
-  background:#252833;
-}
-
-.hero{
-  padding:60px 20px;
-  text-align:center;
-  background:linear-gradient(180deg,#181b25,#08090d);
-}
-
-.hero h1{
-  font-size:35px;
-  margin-bottom:15px;
-}
-
-.hero p{
-  color:#aaa;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 20px;
-}
-
-.section-title{
-  font-size:23px;
-  margin-bottom:20px;
-}
-
-.movies{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:18px;
-}
-
-.movie{
-  background:#11131a;
-  border-radius:17px;
-  overflow:hidden;
-  border:1px solid #242733;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.movie:hover{
-  transform:translateY(-5px);
-  border-color:#e50914;
-}
-
-.poster{
-  height:220px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:45px;
-  background:linear-gradient(135deg,#272b38,#11131a);
-}
-
-.movie-info{
-  padding:15px;
-}
-
-.movie-info h3{
-  font-size:16px;
-  margin-bottom:7px;
-}
-
-.movie-info p{
-  color:#999;
-  font-size:12px;
-}
-</style>
+    .film-button:hover {
+      transform: scale(1.05);
+      background: #ff1a25;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
-<div id="loginPage">
-
-  <div class="login-box">
-
-    <div class="logo">
-      MY <span>FILM</span>
-    </div>
-
-    <div class="subtitle">
-      برای ورود، کد دسترسی را وارد کنید
-    </div>
-
-    <input
-      id="accessCode"
-      type="password"
-      placeholder="کد ورود"
-      autocomplete="off"
-    >
-
-    <button onclick="login()">
-      🔐 ورود به سایت
-    </button>
-
-    <div id="error"></div>
-
-  </div>
-
-</div>
-
-
-<!-- MAIN SITE -->
-<div id="mainPage">
-
-  <header>
-
-    <div class="logo-small">
-      MY <span>FILM</span>
-    </div>
-
-    <button class="logout" onclick="logout()">
-      خروج
-    </button>
-
-  </header>
-
-
-  <section class="hero">
-
-    <h1>🎬 به MY FILM خوش آمدید</h1>
-
-    <p>
-      فیلم‌ها و سریال‌های مورد علاقه‌ات را پیدا کن
-    </p>
-
-  </section>
-
-
   <div class="container">
+    <h1>🎬 MY FILM</h1>
 
-    <div class="section-title">
-      🔥 فیلم‌های پیشنهادی
-    </div>
-
-    <div class="movies">
-
-      <div class="movie" onclick="movieClick('فیلم اکشن')">
-        <div class="poster">🎬</div>
-        <div class="movie-info">
-          <h3>فیلم اکشن</h3>
-          <p>Action • 2026</p>
-        </div>
-      </div>
-
-      <div class="movie" onclick="movieClick('فیلم هیجانی')">
-        <div class="poster">🍿</div>
-        <div class="movie-info">
-          <h3>فیلم هیجانی</h3>
-          <p>Thriller • 2026</p>
-        </div>
-      </div>
-
-      <div class="movie" onclick="movieClick('فیلم جدید')">
-        <div class="poster">🎞️</div>
-        <div class="movie-info">
-          <h3>فیلم جدید</h3>
-          <p>Drama • 2026</p>
-        </div>
-      </div>
-
-      <div class="movie" onclick="movieClick('سریال محبوب')">
-        <div class="poster">📺</div>
-        <div class="movie-info">
-          <h3>سریال محبوب</h3>
-          <p>Series • 2026</p>
-        </div>
-      </div>
-
-    </div>
-
+    <a href="films.html" class="film-button">
+      برای فیلم دیدن کلیک کنید
+    </a>
   </div>
-
-</div>
-
-
-<script>
-
-const PASSWORD = "MYFILM123";
-
-function login(){
-
-  const code = document.getElementById("accessCode").value;
-  const error = document.getElementById("error");
-
-  if(code === PASSWORD){
-
-    localStorage.setItem("myfilm_login","true");
-
-    document.getElementById("loginPage").style.display="none";
-    document.getElementById("mainPage").style.display="block";
-
-  }else{
-
-    error.innerText="❌ کد ورود اشتباه است";
-
-  }
-}
-
-
-function logout(){
-
-  localStorage.removeItem("myfilm_login");
-
-  document.getElementById("mainPage").style.display="none";
-  document.getElementById("loginPage").style.display="flex";
-
-  document.getElementById("accessCode").value="";
-}
-
-
-function movieClick(name){
-
-  alert("🎬 انتخاب شد: " + name);
-
-}
-
-
-window.onload=function(){
-
-  if(localStorage.getItem("myfilm_login") === "true"){
-
-    document.getElementById("loginPage").style.display="none";
-    document.getElementById("mainPage").style.display="block";
-
-  }
-
-};
-
-</script>
 
 </body>
-      </html>
+</html>
