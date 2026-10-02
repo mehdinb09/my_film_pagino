@@ -1,24 +1,198 @@
-<input id="password" type="password" placeholder="رمز ورود">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MY FILM</title>
+
+<style>
+
+body{
+margin:0;
+background:#050505;
+color:white;
+font-family:tahoma;
+}
+
+.center{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+width:90%;
+max-width:400px;
+background:#111;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 40px red;
+}
+
+h1{
+color:#ff0000;
+font-size:35px;
+}
+
+input{
+width:90%;
+padding:15px;
+border-radius:15px;
+border:none;
+background:#222;
+color:white;
+text-align:center;
+font-size:18px;
+}
+
+button,.watch{
+margin-top:20px;
+padding:15px;
+width:90%;
+border:0;
+border-radius:30px;
+background:#e00000;
+color:white;
+font-size:20px;
+cursor:pointer;
+display:block;
+text-decoration:none;
+}
+
+#filmPage{
+display:none;
+}
+
+.movie{
+width:90%;
+max-width:700px;
+margin:40px auto;
+background:#111;
+border-radius:25px;
+padding:20px;
+text-align:center;
+box-shadow:0 0 30px red;
+}
+
+.poster{
+width:100%;
+border-radius:20px;
+height:350px;
+background:#222;
+object-fit:cover;
+}
+
+video{
+width:100%;
+margin-top:20px;
+border-radius:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- صفحه رمز -->
+
+<div id="loginPage" class="center">
+
+<div class="card">
+
+<h1>🎬 MY FILM</h1>
+
+<p>🔐 رمز ورود را وارد کنید</p>
+
+<input id="password" type="password" placeholder="Password">
 
 <button onclick="login()">
 ورود
 </button>
 
+</div>
+
+</div>
+
+
+
+<!-- صفحه فیلم -->
+
+<div id="filmPage">
+
+
+<div class="movie">
+
+<h1>🎬 فیلم</h1>
+
+<img class="poster" src="poster.jpg">
+
+
+<a class="watch" onclick="showVideo()">
+▶ تماشا
+</a>
+
+
+<div id="videoBox" style="display:none;">
+
+<video controls>
+
+<source src="movie.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
 <script>
+
+const ACCESS_CODE="MYFILM123";
+
+
 function login(){
 
-let pass = document.getElementById("password").value;
+let pass=document.getElementById("password").value;
 
-if(pass === "MYFILM123"){
 
-document.getElementById("login").style.display="none";
-document.getElementById("site").style.display="block";
+if(pass===ACCESS_CODE){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("filmPage").style.display="block";
+
 
 }else{
 
-alert("رمز اشتباه است");
+alert("❌ رمز اشتباه است");
+
+document.getElementById("password").value="";
 
 }
 
 }
+
+
+
+function showVideo(){
+
+document.getElementById("videoBox").style.display="block";
+
+}
+
+
 </script>
+
+
+</body>
+  </html>
