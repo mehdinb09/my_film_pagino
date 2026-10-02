@@ -20,79 +20,68 @@
 
     header {
       text-align: center;
-      padding: 35px 20px 25px;
+      padding: 30px 15px;
+      background: linear-gradient(135deg, #151515, #252525);
+      border-bottom: 1px solid #333;
     }
 
     header h1 {
-      font-size: 32px;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
+      font-size: 30px;
     }
 
     header p {
+      margin: 0;
       color: #aaa;
-      font-size: 16px;
     }
 
-    .movies {
-      max-width: 1000px;
+    .container {
+      max-width: 900px;
       margin: auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
+      padding: 25px 15px;
     }
 
-    .movie {
-      background: #171717;
+    .film-box {
+      background: #151515;
+      border: 1px solid #292929;
       border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    .poster {
-      height: 330px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #292929, #111);
-      font-size: 80px;
+    .film-title {
+      font-size: 24px;
+      margin: 0 0 15px;
     }
 
-    .movie-info {
-      padding: 22px;
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      background: #000;
+    }
+
+    .download {
+      display: block;
+      margin-top: 18px;
+      padding: 14px;
       text-align: center;
-    }
-
-    .movie-info h2 {
-      margin: 0 0 12px;
-      font-size: 23px;
-    }
-
-    .movie-info p {
-      color: #aaa;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .watch {
-      display: inline-block;
-      background: #e50914;
-      color: white;
       text-decoration: none;
-      padding: 13px 28px;
-      border-radius: 10px;
+      color: white;
+      background: #e50914;
+      border-radius: 12px;
       font-size: 17px;
       font-weight: bold;
     }
 
-    .watch:hover {
-      background: #ff1a25;
+    .download:hover {
+      background: #b20710;
     }
 
     .back {
       display: block;
-      width: fit-content;
-      margin: 35px auto;
+      margin-top: 15px;
+      text-align: center;
       color: #aaa;
       text-decoration: none;
     }
@@ -102,39 +91,36 @@
 <body>
 
   <header>
-    <h1>🎬 فیلم‌های MY FILM</h1>
-    <p>فیلم مورد نظرت رو انتخاب کن</p>
+    <h1>🎬 MY FILM</h1>
+    <p>تماشای فیلم</p>
   </header>
 
-  <section class="movies">
+  <main class="container">
 
-    <div class="movie">
+    <div class="film-box">
 
-      <div class="poster">
-        🎬
-      </div>
+      <h2 class="film-title">🎥 فیلم اول</h2>
 
-      <div class="movie-info">
+      <video controls playsinline preload="metadata">
+        <source src="./-2147483648_-210654.mp4" type="video/mp4">
+        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+      </video>
 
-        <h2>فیلم اول</h2>
+      <a
+        class="download"
+        href="./-2147483648_-210654.mp4"
+        download
+      >
+        ⬇️ دانلود فیلم
+      </a>
 
-        <p>
-          برای تماشای فیلم روی دکمه زیر کلیک کنید.
-        </p>
-
-        <a href="#" class="watch">
-          ▶️ تماشای فیلم
-        </a>
-
-      </div>
+      <a class="back" href="./index.html">
+        ← بازگشت به صفحه اصلی
+      </a>
 
     </div>
 
-  </section>
-
-  <a href="index.html" class="back">
-    ← بازگشت به صفحه اصلی
-  </a>
+  </main>
 
 </body>
-  </html>
+</html>
