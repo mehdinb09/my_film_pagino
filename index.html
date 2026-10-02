@@ -4,220 +4,412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MY FILM</title>
+<title>MY SERVICE</title>
 
 <style>
 
-body{
-margin:0;
-background:#050505;
-color:white;
-font-family:tahoma;
-}
-
-.center{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.card{
-width:90%;
-max-width:400px;
-background:#111;
-padding:30px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 0 40px red;
-}
-
-h1{
-color:#ff0000;
-font-size:35px;
-}
-
-input{
-width:90%;
-padding:15px;
-border-radius:15px;
-border:none;
-background:#222;
-color:white;
-text-align:center;
-font-size:18px;
-}
-
-button,.watch{
-margin-top:20px;
-padding:15px;
-width:90%;
-border:0;
-border-radius:30px;
-background:#e00000;
-color:white;
-font-size:20px;
-cursor:pointer;
-display:block;
-text-decoration:none;
-}
-
-#filmPage{
-display:none;
-}
-
-.movie{
-width:90%;
-max-width:700px;
-margin:40px auto;
-background:#111;
-border-radius:25px;
-padding:20px;
-text-align:center;
-box-shadow:0 0 30px red;
-}
-
-.poster{
-width:100%;
-border-radius:20px;
-height:350px;
-background:#222;
-object-fit:cover;
-}
-
-video{
-width:100%;
-margin-top:20px;
-border-radius:20px;
-}
-
-video{
-width:100%;
-margin-top:20px;
-border-radius:20px;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-background:
-linear-gradient(#0008,#0008),
-url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
-background-size:cover;
-background-position:center;
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.92)),
+    radial-gradient(circle at top,#3b0000,#050505 60%);
+    color:white;
+    min-height:100vh;
+}
+
+/* صفحه ورود */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.loginBox{
+    width:100%;
+    max-width:420px;
+    background:rgba(15,15,15,.95);
+    border:1px solid #ff2020;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:
+        0 0 15px rgba(255,0,0,.5),
+        0 0 50px rgba(255,0,0,.15);
 }
 
 .logo{
-font-size:45px;
-color:white;
-text-align:center;
-text-shadow:0 0 15px red;
-padding:40px;
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-shadow:0 0 20px red;
+}
+
+.subtitle{
+    color:#aaa;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #444;
+    background:#080808;
+    color:white;
+    text-align:center;
+    font-size:16px;
+    outline:none;
+    margin-bottom:15px;
+}
+
+input:focus{
+    border-color:red;
+    box-shadow:0 0 10px rgba(255,0,0,.4);
+}
+
+.loginBtn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#d40000;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.loginBtn:hover{
+    background:#ff0000;
+}
+
+/* صفحه خدمات */
+
+#servicePage{
+    display:none;
+    min-height:100vh;
+    padding:25px 15px 50px;
+}
+
+.header{
+    text-align:center;
+    padding:20px 0 35px;
+}
+
+.header h1{
+    font-size:36px;
+    text-shadow:0 0 20px red;
+}
+
+.header p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* کارت خدمات */
+
+.services{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:rgba(18,18,18,.95);
+    border:1px solid #333;
+    border-radius:18px;
+    padding:25px 20px;
+    text-align:center;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:red;
+    box-shadow:0 0 20px rgba(255,0,0,.3);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.order{
+    display:inline-block;
+    margin-top:18px;
+    padding:11px 20px;
+    border-radius:10px;
+    background:#d40000;
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.order:hover{
+    background:red;
+}
+
+/* پایین صفحه */
+
+.footer{
+    text-align:center;
+    color:#666;
+    margin-top:45px;
+    font-size:13px;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- صفحه ورود -->
 
-<!-- صفحه رمز -->
+<div id="loginPage">
 
-<div id="loginPage" class="center">
+    <div class="loginBox">
 
-<div class="card">
+        <div class="logo">
+            💎 MY SERVICE
+        </div>
 
-<h1>🎬 MY FILM</h1>
+        <div class="subtitle">
+            خدمات مجازی • طراحی • ربات • شبکه‌های اجتماعی
+        </div>
 
-<p>🔐 رمز ورود را وارد کنید</p>
+        <input
+            id="password"
+            type="password"
+            placeholder="رمز ورود را وارد کنید"
+        >
 
-<input id="password" type="password" placeholder="Password">
+        <button class="loginBtn" onclick="login()">
+            🔐 ورود به سایت
+        </button>
 
-<button onclick="login()">
-ورود
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- صفحه فیلم -->
-
-<div id="filmPage">
-
-
-<div class="movie">
-
-<h1>🎬 فیلم</h1>
-
-<img class="poster" src="poster.jpg">
-
-
-<a class="watch" onclick="showVideo()">
-▶ تماشا
-</a>
-
-
-<div id="videoBox" style="display:none;">
-
-<video controls>
-
-<source src="movie.mp4" type="video/mp4">
-
-</video>
+    </div>
 
 </div>
 
 
+<!-- صفحه خدمات -->
+
+<div id="servicePage">
+
+    <div class="header">
+
+        <h1>💎 MY SERVICE</h1>
+
+        <p>
+            ارائه خدمات حرفه‌ای مجازی با کیفیت بالا
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="card">
+
+            <div class="icon">🌐</div>
+
+            <h2>
+                طراحی سایت
+            </h2>
+
+            <p>
+                طراحی سایت‌های شخصی، فروشگاهی و خدماتی
+                با ظاهر حرفه‌ای و مناسب موبایل.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                سفارش
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🤖</div>
+
+            <h2>
+                ساخت ربات
+            </h2>
+
+            <p>
+                ساخت ربات و سیستم‌های اتوماتیک
+                برای کسب‌وکار و شبکه‌های اجتماعی.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                سفارش
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎨</div>
+
+            <h2>
+                طراحی لوگو و بنر
+            </h2>
+
+            <p>
+                طراحی لوگو، بنر، پوستر و تصاویر
+                تبلیغاتی با ظاهر حرفه‌ای.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                سفارش
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📱</div>
+
+            <h2>
+                خدمات شبکه اجتماعی
+            </h2>
+
+            <p>
+                طراحی محتوا، مدیریت و خدمات مربوط
+                به شبکه‌های اجتماعی.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                سفارش
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💻</div>
+
+            <h2>
+                خدمات کامپیوتری
+            </h2>
+
+            <p>
+                انجام خدمات مختلف کامپیوتری،
+                نرم‌افزاری و اینترنتی.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                سفارش
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔥</div>
+
+            <h2>
+                سفارش اختصاصی
+            </h2>
+
+            <p>
+                اگر خدمات موردنظر شما در لیست نیست،
+                سفارش اختصاصی خود را ارسال کنید.
+            </p>
+
+            <a class="order"
+               href="https://t.me/YOUR_ID"
+               target="_blank">
+                ثبت سفارش
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer">
+        © 2026 MY SERVICE — تمامی حقوق محفوظ است
+    </div>
+
 </div>
-
-
-</div>
-
 
 
 <script>
 
-const ACCESS_CODE="MYFILM123";
-
+const ACCESS_CODE = "MYFILM123";
 
 function login(){
 
-let pass=document.getElementById("password").value;
+    const password =
+        document.getElementById("password").value.trim();
 
+    if(password === ACCESS_CODE){
 
-if(pass===ACCESS_CODE){
+        document.getElementById("loginPage").style.display = "none";
 
-document.getElementById("loginPage").style.display="none";
+        document.getElementById("servicePage").style.display = "block";
 
-document.getElementById("filmPage").style.display="block";
+    }else{
 
+        alert("❌ رمز ورود اشتباه است");
 
-}else{
+        document.getElementById("password").value = "";
 
-alert("❌ رمز اشتباه است");
-
-document.getElementById("password").value="";
-
-}
-
-}
-
-
-
-function showVideo(){
-
-document.getElementById("videoBox").style.display="block";
+    }
 
 }
 
+document.getElementById("password").addEventListener("keydown", function(event){
 
-body
-    
+    if(event.key === "Enter"){
+        login();
+    }
 
+});
 
-
+</script>
 
 </body>
-</html>
+    </html>
