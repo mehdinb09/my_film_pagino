@@ -1,126 +1,674 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>فیلم‌ها | MY FILM</title>
+  <title>MY FILM | ورود</title>
 
   <style>
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      background: #0b0b0b;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, #3a0000 0%, #120000 25%, #050505 65%);
       color: white;
       font-family: Tahoma, Arial, sans-serif;
     }
 
+    /* =========================
+       صفحه ورود
+       ========================= */
+
+    #login {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* نورهای پس زمینه */
+
+    #login::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: #e50914;
+      opacity: 0.12;
+      filter: blur(100px);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      animation: glow 5s infinite alternate;
+    }
+
+    #login::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: #ff1a1a;
+      opacity: 0.08;
+      filter: blur(100px);
+      border-radius: 50%;
+      bottom: -100px;
+      left: -100px;
+      animation: glow 4s infinite alternate-reverse;
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.3);
+      }
+    }
+
+    /* کارت ورود */
+
+    .login-card {
+      width: 100%;
+      max-width: 430px;
+      padding: 35px 25px;
+      text-align: center;
+
+      background: rgba(20, 20, 20, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(229, 9, 20, 0.12);
+
+      position: relative;
+      z-index: 2;
+
+      animation: cardIn 0.8s ease;
+    }
+
+    @keyframes cardIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+    }
+
+    /* لوگو */
+
+    .logo {
+      width: 85px;
+      height: 85px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: linear-gradient(135deg, #ff1a1a, #8b0000);
+
+      box-shadow:
+        0 0 25px rgba(229, 9, 20, 0.45);
+
+      font-size: 42px;
+
+      animation: logoPulse 2.5s infinite;
+    }
+
+    @keyframes logoPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(229, 9, 20, 0.65);
+      }
+
+    }
+
+    .login-card h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .login-card .subtitle {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    /* خط تزئینی */
+
+    .line {
+      width: 70px;
+      height: 3px;
+      margin: 0 auto 25px;
+
+      border-radius: 10px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #e50914,
+        transparent
+      );
+    }
+
+    /* ورودی رمز */
+
+    .input-box {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .input-box span {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #aaa;
+    }
+
+    input {
+      width: 100%;
+
+      padding: 17px 50px 17px 15px;
+
+      border-radius: 14px;
+
+      border: 1px solid #333;
+
+      outline: none;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      color: white;
+
+      text-align: center;
+
+      font-size: 17px;
+
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #e50914;
+
+      box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.1),
+        0 0 20px rgba(229, 9, 20, 0.15);
+    }
+
+    input::placeholder {
+      color: #777;
+    }
+
+    /* دکمه */
+
+    .login-btn {
+      width: 100%;
+
+      padding: 16px;
+
+      margin-top: 5px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: linear-gradient(
+        135deg,
+        #ff1b23,
+        #b00000
+      );
+
+      color: white;
+
+      font-size: 18px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px rgba(229, 9, 20, 0.25);
+
+      transition: 0.25s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 30px rgba(229, 9, 20, 0.4);
+    }
+
+    .login-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* خطای رمز */
+
+    #error {
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 11px;
+
+      border-radius: 10px;
+
+      background: rgba(255, 0, 0, 0.08);
+
+      border: 1px solid rgba(255, 0, 0, 0.2);
+
+      color: #ff5c5c;
+
+      font-size: 14px;
+
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(7px);
+      }
+
+      50% {
+        transform: translateX(-7px);
+      }
+
+      75% {
+        transform: translateX(5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+
+    }
+
+    .security {
+      margin-top: 25px;
+
+      color: #666;
+
+      font-size: 12px;
+    }
+
+    /* =========================
+       سایت فیلم
+       ========================= */
+
+    #site {
+      display: none;
+      min-height: 100vh;
+      background: #080808;
+    }
+
     header {
       text-align: center;
-      padding: 30px 15px;
-      background: linear-gradient(135deg, #151515, #252525);
-      border-bottom: 1px solid #333;
+
+      padding: 35px 15px 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #171717,
+          #090909
+        );
+
+      border-bottom: 1px solid #292929;
     }
 
     header h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
+      font-size: 32px;
+      margin-bottom: 8px;
     }
 
     header p {
-      margin: 0;
       color: #aaa;
     }
 
     .container {
+      width: 100%;
       max-width: 900px;
+
       margin: auto;
-      padding: 25px 15px;
+
+      padding: 25px 15px 50px;
     }
 
     .film-box {
-      background: #151515;
+      background: #141414;
+
       border: 1px solid #292929;
-      border-radius: 18px;
+
+      border-radius: 22px;
+
       padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
     .film-title {
       font-size: 24px;
-      margin: 0 0 15px;
+
+      margin-bottom: 18px;
     }
 
     video {
       width: 100%;
+
       display: block;
-      border-radius: 14px;
-      background: #000;
+
+      border-radius: 16px;
+
+      background: black;
     }
 
     .download {
       display: block;
+
       margin-top: 18px;
-      padding: 14px;
+
+      padding: 16px;
+
       text-align: center;
+
       text-decoration: none;
+
       color: white;
-      background: #e50914;
-      border-radius: 12px;
-      font-size: 17px;
+
+      background: linear-gradient(
+        135deg,
+        #ff161f,
+        #b00000
+      );
+
+      border-radius: 13px;
+
+      font-size: 18px;
+
       font-weight: bold;
+
+      transition: 0.2s;
     }
 
     .download:hover {
-      background: #b20710;
+      transform: translateY(-2px);
     }
 
-    .back {
+    .logout {
       display: block;
-      margin-top: 15px;
-      text-align: center;
+
+      width: 100%;
+
+      margin-top: 12px;
+
+      padding: 13px;
+
+      border: 1px solid #333;
+
+      border-radius: 12px;
+
+      background: #101010;
+
       color: #aaa;
-      text-decoration: none;
+
+      font-size: 15px;
+
+      cursor: pointer;
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <header>
-    <h1>🎬 MY FILM</h1>
-    <p>تماشای فیلم</p>
-  </header>
 
-  <main class="container">
+  <!-- =========================
+       صفحه ورود
+       ========================= -->
 
-    <div class="film-box">
+  <section id="login">
 
-      <h2 class="film-title">🎥 فیلم اول</h2>
+    <div class="login-card">
 
-      <video controls playsinline preload="metadata">
-        <source src="./-2147483648_-210654.mp4" type="video/mp4">
-        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-      </video>
+      <div class="logo">
+        🎬
+      </div>
 
-      <a
-        class="download"
-        href="./-2147483648_-210654.mp4"
-        download
+      <h1>
+        MY FILM
+      </h1>
+
+      <p class="subtitle">
+        🔐 ورود به بخش اختصاصی فیلم‌ها
+      </p>
+
+      <div class="line"></div>
+
+
+      <div class="input-box">
+
+        <span>🔑</span>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="رمز مخصوص را وارد کنید"
+          autocomplete="off"
+          onkeydown="if(event.key==='Enter') login()"
+        >
+
+      </div>
+
+
+      <button
+        class="login-btn"
+        onclick="login()"
       >
-        ⬇️ دانلود فیلم
-      </a>
+        🔓 ورود به فیلم‌ها
+      </button>
 
-      <a class="back" href="./index.html">
-        ← بازگشت به صفحه اصلی
-      </a>
+
+      <div id="error">
+        ❌ رمز وارد شده صحیح نیست
+      </div>
+
+
+      <div class="security">
+        🛡️ این بخش مخصوص کاربران مجاز است
+      </div>
 
     </div>
 
-  </main>
+  </section>
+
+
+
+  <!-- =========================
+       سایت فیلم
+       ========================= -->
+
+  <section id="site">
+
+    <header>
+
+      <h1>
+        🎬 MY FILM
+      </h1>
+
+      <p>
+        🍿 تماشای فیلم
+      </p>
+
+    </header>
+
+
+    <main class="container">
+
+      <div class="film-box">
+
+        <h2 class="film-title">
+          🎥 فیلم اول
+        </h2>
+
+
+        <video
+          controls
+          playsinline
+          preload="metadata"
+        >
+
+          <source
+            src="./-2147483648_-210654.mp4"
+            type="video/mp4"
+          >
+
+          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+
+        </video>
+
+
+        <a
+          class="download"
+          href="./-2147483648_-210654.mp4"
+          download
+        >
+          ⬇️ دانلود فیلم
+        </a>
+
+
+        <button
+          class="logout"
+          onclick="logout()"
+        >
+          🔒 خروج از حساب
+        </button>
+
+      </div>
+
+    </main>
+
+  </section>
+
+
+
+  <script>
+
+    /* =========================
+       رمز ورود
+       ========================= */
+
+    const PASSWORD = "MYFILM123";
+
+
+    function login() {
+
+      const password =
+        document.getElementById("password").value;
+
+      const error =
+        document.getElementById("error");
+
+
+      if (password === PASSWORD) {
+
+        document.getElementById("login").style.display = "none";
+
+        document.getElementById("site").style.display = "block";
+
+        localStorage.setItem(
+          "myfilm_login",
+          "yes"
+        );
+
+        error.style.display = "none";
+
+      }
+
+      else {
+
+        error.style.display = "block";
+
+        document.getElementById("password").value = "";
+
+        document.getElementById("password").focus();
+
+      }
+
+    }
+
+
+    /* =========================
+       ورود قبلی
+       ========================= */
+
+    if (
+      localStorage.getItem("myfilm_login") === "yes"
+    ) {
+
+      document.getElementById("login").style.display = "none";
+
+      document.getElementById("site").style.display = "block";
+
+    }
+
+
+    /* =========================
+       خروج
+       ========================= */
+
+    function logout() {
+
+      localStorage.removeItem(
+        "myfilm_login"
+      );
+
+      location.reload();
+
+    }
+
+  </script>
+
 
 </body>
-</html>
+          </html>
