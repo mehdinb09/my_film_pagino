@@ -1,119 +1,24 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<input id="password" type="password" placeholder="رمز ورود">
 
-<title>MY FILM | سینما</title>
+<button onclick="login()">
+ورود
+</button>
 
-<style>
-body{
-    margin:0;
-    background:#050505;
-    font-family:tahoma;
-    color:white;
+<script>
+function login(){
+
+let pass = document.getElementById("password").value;
+
+if(pass === "MYFILM123"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("site").style.display="block";
+
+}else{
+
+alert("رمز اشتباه است");
+
 }
 
-.header{
-    text-align:center;
-    padding:40px 20px;
-    background:linear-gradient(180deg,#250000,#050505);
 }
-
-.header h1{
-    font-size:40px;
-    color:#ff0000;
-}
-
-.header p{
-    color:#aaa;
-}
-
-.box{
-    max-width:900px;
-    margin:30px auto;
-    padding:25px;
-    background:#111;
-    border-radius:25px;
-    box-shadow:0 0 40px #ff0000;
-}
-
-.poster{
-    width:180px;
-    border-radius:20px;
-    display:block;
-    margin:auto;
-}
-
-h2{
-    text-align:center;
-}
-
-.info{
-    text-align:center;
-    color:#ddd;
-    line-height:2;
-}
-
-video{
-    width:100%;
-    margin-top:25px;
-    border-radius:20px;
-}
-
-.btn{
-    display:block;
-    text-align:center;
-    margin:25px auto;
-    padding:15px;
-    width:70%;
-    background:#e60000;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    font-size:20px;
-}
-
-.btn:hover{
-    background:#ff3333;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="header">
-<h1>🎬 MY FILM</h1>
-<p>به دنیای سینما خوش آمدید</p>
-</div>
-
-
-<div class="box">
-
-<img class="poster" src="poster.jpg">
-
-<h2>🎞 نام فیلم</h2>
-
-<div class="info">
-⭐ کیفیت: Full HD<br>
-🎭 ژانر: اکشن / درام<br>
-⏱ زمان: ۲ ساعت
-</div>
-
-
-<video controls>
-<source src="VIDEO-LINK.mp4" type="video/mp4">
-مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-</video>
-
-
-<a class="btn" href="VIDEO-LINK.mp4">
-▶ فقط تماشا
-</a>
-
-
-</div>
-
-</body>
-</html>
+</script>
