@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MY SERVICE</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -16,14 +14,14 @@
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:
-    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.92)),
-    radial-gradient(circle at top,#3b0000,#050505 60%);
-    color:white;
     min-height:100vh;
+    color:white;
+    background:
+        radial-gradient(circle at top,#450000 0%,#150000 25%,#050505 65%),
+        #050505;
 }
 
-/* صفحه ورود */
+/* LOGIN */
 
 #loginPage{
     min-height:100vh;
@@ -36,38 +34,40 @@ body{
 .loginBox{
     width:100%;
     max-width:420px;
-    background:rgba(15,15,15,.95);
-    border:1px solid #ff2020;
-    border-radius:20px;
-    padding:35px 25px;
+    background:rgba(12,12,12,.96);
+    border:1px solid #e00000;
+    border-radius:22px;
+    padding:40px 25px;
     text-align:center;
     box-shadow:
-        0 0 15px rgba(255,0,0,.5),
-        0 0 50px rgba(255,0,0,.15);
+        0 0 20px rgba(255,0,0,.5),
+        0 0 60px rgba(255,0,0,.15);
 }
 
 .logo{
-    font-size:38px;
+    font-size:40px;
     font-weight:bold;
-    margin-bottom:10px;
-    text-shadow:0 0 20px red;
+    margin-bottom:12px;
+    text-shadow:
+        0 0 10px red,
+        0 0 25px red;
 }
 
 .subtitle{
-    color:#aaa;
-    margin-bottom:30px;
+    color:#999;
     font-size:14px;
+    margin-bottom:30px;
 }
 
 input{
     width:100%;
-    padding:15px;
+    padding:16px;
     border-radius:12px;
     border:1px solid #444;
-    background:#080808;
+    background:#050505;
     color:white;
-    text-align:center;
     font-size:16px;
+    text-align:center;
     outline:none;
     margin-bottom:15px;
 }
@@ -79,10 +79,10 @@ input:focus{
 
 .loginBtn{
     width:100%;
-    padding:15px;
+    padding:16px;
     border:none;
     border-radius:12px;
-    background:#d40000;
+    background:#d00000;
     color:white;
     font-size:17px;
     font-weight:bold;
@@ -93,7 +93,7 @@ input:focus{
     background:#ff0000;
 }
 
-/* صفحه خدمات */
+/* SERVICE PAGE */
 
 #servicePage{
     display:none;
@@ -107,16 +107,19 @@ input:focus{
 }
 
 .header h1{
-    font-size:36px;
-    text-shadow:0 0 20px red;
+    font-size:38px;
+    text-shadow:
+        0 0 10px red,
+        0 0 25px red;
 }
 
 .header p{
     color:#aaa;
     margin-top:10px;
+    font-size:14px;
 }
 
-/* کارت خدمات */
+/* CARDS */
 
 .services{
     width:100%;
@@ -128,9 +131,14 @@ input:focus{
 }
 
 .card{
-    background:rgba(18,18,18,.95);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,25,25,.98),
+            rgba(8,8,8,.98)
+        );
     border:1px solid #333;
-    border-radius:18px;
+    border-radius:20px;
     padding:25px 20px;
     text-align:center;
     transition:.25s;
@@ -138,42 +146,43 @@ input:focus{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:red;
-    box-shadow:0 0 20px rgba(255,0,0,.3);
+    border-color:#e00000;
+    box-shadow:0 0 20px rgba(255,0,0,.35);
 }
 
 .icon{
-    font-size:45px;
+    font-size:48px;
     margin-bottom:15px;
 }
 
 .card h2{
-    font-size:19px;
+    font-size:20px;
     margin-bottom:10px;
 }
 
 .card p{
     color:#aaa;
     font-size:14px;
-    line-height:1.8;
+    line-height:1.9;
 }
 
 .order{
     display:inline-block;
     margin-top:18px;
-    padding:11px 20px;
+    padding:11px 24px;
     border-radius:10px;
-    background:#d40000;
+    background:#d00000;
     color:white;
     text-decoration:none;
     font-size:14px;
+    transition:.2s;
 }
 
 .order:hover{
-    background:red;
+    background:#ff0000;
 }
 
-/* پایین صفحه */
+/* FOOTER */
 
 .footer{
     text-align:center;
@@ -182,12 +191,28 @@ input:focus{
     font-size:13px;
 }
 
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:34px;
+    }
+
+    .header h1{
+        font-size:32px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- صفحه ورود -->
+<!-- LOGIN -->
 
 <div id="loginPage">
 
@@ -198,7 +223,7 @@ input:focus{
         </div>
 
         <div class="subtitle">
-            خدمات مجازی • طراحی • ربات • شبکه‌های اجتماعی
+            خدمات مجازی • امنیت • طراحی • شبکه‌های اجتماعی
         </div>
 
         <input
@@ -207,7 +232,9 @@ input:focus{
             placeholder="رمز ورود را وارد کنید"
         >
 
-        <button class="loginBtn" onclick="login()">
+        <button
+            class="loginBtn"
+            onclick="login()">
             🔐 ورود به سایت
         </button>
 
@@ -216,16 +243,18 @@ input:focus{
 </div>
 
 
-<!-- صفحه خدمات -->
+<!-- MAIN PAGE -->
 
 <div id="servicePage">
 
     <div class="header">
 
-        <h1>💎 MY SERVICE</h1>
+        <h1>
+            💎 MY SERVICE
+        </h1>
 
         <p>
-            ارائه خدمات حرفه‌ای مجازی با کیفیت بالا
+            خدمات حرفه‌ای مجازی و دیجیتال
         </p>
 
     </div>
@@ -234,143 +263,180 @@ input:focus{
     <div class="services">
 
 
+        <!-- هک اکانت -->
+
         <div class="card">
 
-            <div class="icon">🌐</div>
+            <div class="icon">
+                🔐
+            </div>
 
             <h2>
-                طراحی سایت
+                هک اکانت
             </h2>
 
             <p>
-                طراحی سایت‌های شخصی، فروشگاهی و خدماتی
-                با ظاهر حرفه‌ای و مناسب موبایل.
+                خدمات بازیابی و ایمن‌سازی
+                اکانت‌های خودتان و کمک
+                برای محافظت از حساب کاربری.
             </p>
 
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
                 سفارش
             </a>
 
         </div>
 
 
+        <!-- ساخت ربات -->
+
         <div class="card">
 
-            <div class="icon">🤖</div>
+            <div class="icon">
+                🤖
+            </div>
 
             <h2>
                 ساخت ربات
             </h2>
 
             <p>
-                ساخت ربات و سیستم‌های اتوماتیک
-                برای کسب‌وکار و شبکه‌های اجتماعی.
+                ساخت ربات و سیستم‌های
+                اتوماتیک برای کسب‌وکار
+                و شبکه‌های اجتماعی.
             </p>
 
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
                 سفارش
             </a>
 
         </div>
 
 
+        <!-- طراحی لوگو -->
+
         <div class="card">
 
-            <div class="icon">🎨</div>
+            <div class="icon">
+                🎨
+            </div>
 
             <h2>
                 طراحی لوگو و بنر
             </h2>
 
             <p>
-                طراحی لوگو، بنر، پوستر و تصاویر
-                تبلیغاتی با ظاهر حرفه‌ای.
+                طراحی لوگو، بنر، پوستر
+                و تصاویر تبلیغاتی
+                با ظاهر حرفه‌ای.
             </p>
 
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
                 سفارش
             </a>
 
         </div>
 
 
+        <!-- شبکه اجتماعی -->
+
         <div class="card">
 
-            <div class="icon">📱</div>
+            <div class="icon">
+                📱
+            </div>
 
             <h2>
                 خدمات شبکه اجتماعی
             </h2>
 
             <p>
-                طراحی محتوا، مدیریت و خدمات مربوط
-                به شبکه‌های اجتماعی.
+                طراحی محتوا، مدیریت صفحات
+                و خدمات مربوط به شبکه‌های
+                اجتماعی.
             </p>
 
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
                 سفارش
             </a>
 
         </div>
 
 
-        <div class="card">
-
-            <div class="icon">💻</div>
-
-            <h2>
-                خدمات کامپیوتری
-            </h2>
-
-            <p>
-                انجام خدمات مختلف کامپیوتری،
-                نرم‌افزاری و اینترنتی.
-            </p>
-
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
-                سفارش
-            </a>
-
-        </div>
-
+        <!-- سفارش اختصاصی -->
 
         <div class="card">
 
-            <div class="icon">🔥</div>
+            <div class="icon">
+                🔥
+            </div>
 
             <h2>
                 سفارش اختصاصی
             </h2>
 
             <p>
-                اگر خدمات موردنظر شما در لیست نیست،
-                سفارش اختصاصی خود را ارسال کنید.
+                خدمات موردنظر خودت را
+                ارسال کن تا درباره انجام
+                آن صحبت کنیم.
             </p>
 
-            <a class="order"
-               href="https://t.me/YOUR_ID"
-               target="_blank">
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
                 ثبت سفارش
             </a>
 
         </div>
 
 
+        <!-- پشتیبانی -->
+
+        <div class="card">
+
+            <div class="icon">
+                💬
+            </div>
+
+            <h2>
+                پشتیبانی
+            </h2>
+
+            <p>
+                برای سوال، مشاوره یا
+                پیگیری سفارش با ما
+                در ارتباط باشید.
+            </p>
+
+            <a
+                class="order"
+                href="https://t.me/YOUR_ID"
+                target="_blank">
+                ارتباط
+            </a>
+
+        </div>
+
     </div>
 
 
     <div class="footer">
-        © 2026 MY SERVICE — تمامی حقوق محفوظ است
+        © 2026 MY SERVICE
+        <br>
+        تمامی حقوق محفوظ است
     </div>
 
 </div>
@@ -383,25 +449,34 @@ const ACCESS_CODE = "MYFILM123";
 function login(){
 
     const password =
-        document.getElementById("password").value.trim();
+        document
+        .getElementById("password")
+        .value
+        .trim();
 
     if(password === ACCESS_CODE){
 
-        document.getElementById("loginPage").style.display = "none";
+        document
+        .getElementById("loginPage")
+        .style.display = "none";
 
-        document.getElementById("servicePage").style.display = "block";
+        document
+        .getElementById("servicePage")
+        .style.display = "block";
 
     }else{
 
         alert("❌ رمز ورود اشتباه است");
 
-        document.getElementById("password").value = "";
-
+        document
+        .getElementById("password")
+        .value = "";
     }
-
 }
 
-document.getElementById("password").addEventListener("keydown", function(event){
+document
+.getElementById("password")
+.addEventListener("keydown",function(event){
 
     if(event.key === "Enter"){
         login();
