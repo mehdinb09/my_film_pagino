@@ -616,7 +616,7 @@
 
         document.getElementById("site").style.display = "block";
 
-        localStorage.setItem(
+        sessionStorage.setItem(
           "myfilm_login",
           "yes"
         );
@@ -643,7 +643,7 @@
        ========================= */
 
     if (
-      localStorage.getItem("myfilm_login") === "yes"
+      sessionStorage.getItem("myfilm_login") === "yes"
     ) {
 
       document.getElementById("login").style.display = "none";
@@ -659,9 +659,11 @@
 
     function logout() {
 
-      localStorage.removeItem(
-        "myfilm_login"
-      );
+      sessionStorage.removeItem(
+    "myfilm_login"
+);
+      
+    
 
       location.reload();
 
