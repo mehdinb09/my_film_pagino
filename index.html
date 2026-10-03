@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MY SERVICE</title>
@@ -15,822 +12,585 @@
     box-sizing:border-box;
     margin:0;
     padding:0;
+    font-family:Tahoma, Arial, sans-serif;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    min-height:100vh;
-    color:white;
-
     background:
-    radial-gradient(circle at top,#450000 0%,#150000 25%,#050505 65%),
-    #050505;
+        radial-gradient(circle at top, #250000 0%, #080000 45%, #000 100%);
+    color:#fff;
+    min-height:100vh;
 }
 
-
-/* LOGIN */
+/* ================= LOGIN ================= */
 
 #loginPage{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:20px;
 }
 
 .loginBox{
     width:100%;
-    max-width:420px;
-
-    background:rgba(12,12,12,.97);
-
-    border:1px solid #e00000;
-
-    border-radius:22px;
-
-    padding:40px 25px;
-
+    max-width:430px;
+    background:#111;
+    border:1px solid #ff0000;
+    border-radius:25px;
+    padding:35px 25px;
     text-align:center;
-
     box-shadow:
-    0 0 20px rgba(255,0,0,.5),
-    0 0 60px rgba(255,0,0,.15);
+        0 0 20px rgba(255,0,0,.35),
+        inset 0 0 30px rgba(255,0,0,.05);
 }
 
-.logo{
-    font-size:40px;
-    font-weight:bold;
-
+.loginBox h1{
+    font-size:35px;
     margin-bottom:12px;
-
-    text-shadow:
-    0 0 10px red,
-    0 0 25px red;
+    color:#fff;
 }
 
-.subtitle{
-    color:#999;
-
-    font-size:14px;
-
+.loginBox p{
+    color:#aaa;
+    font-size:15px;
     margin-bottom:30px;
 }
 
-input{
+#password{
     width:100%;
-
-    padding:16px;
-
-    border-radius:12px;
-
+    padding:17px;
+    border-radius:14px;
     border:1px solid #444;
-
-    background:#050505;
-
-    color:white;
-
-    font-size:16px;
-
-    text-align:center;
-
     outline:none;
-
+    background:#050505;
+    color:#fff;
+    font-size:16px;
+    text-align:center;
     margin-bottom:15px;
 }
 
-input:focus{
-    border-color:red;
-
-    box-shadow:0 0 10px rgba(255,0,0,.4);
+#password:focus{
+    border-color:#ff0000;
+    box-shadow:0 0 10px rgba(255,0,0,.3);
 }
 
 .loginBtn{
     width:100%;
-
     padding:16px;
-
     border:none;
-
-    border-radius:12px;
-
-    background:#d00000;
-
-    color:white;
-
+    border-radius:14px;
+    background:linear-gradient(90deg,#b00000,#ff0000);
+    color:#fff;
     font-size:17px;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
-.loginBtn:hover{
-    background:#ff0000;
-}
-
-
-/* MAIN */
+/* ================= SERVICE PAGE ================= */
 
 #servicePage{
     display:none;
-
     min-height:100vh;
-
     padding:25px 15px 50px;
+}
+
+.container{
+    width:100%;
+    max-width:800px;
+    margin:auto;
 }
 
 .header{
     text-align:center;
-
-    padding:20px 0 35px;
+    margin-bottom:30px;
 }
 
 .header h1{
-    font-size:38px;
+    font-size:34px;
+    margin-bottom:10px;
+}
 
-    text-shadow:
-    0 0 10px red,
-    0 0 25px red;
+.header h1 span{
+    color:#ff0000;
 }
 
 .header p{
-    color:#aaa;
-
-    margin-top:10px;
-
-    font-size:14px;
+    color:#999;
+    font-size:16px;
 }
 
-
-/* CARDS */
+/* ================= CARDS ================= */
 
 .services{
-
-    width:100%;
-
-    max-width:900px;
-
-    margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(2,1fr);
     gap:18px;
 }
 
 .card{
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(25,25,25,.98),
-        rgba(8,8,8,.98)
-    );
-
-    border:1px solid #333;
-
+    background:#0b0b0b;
+    border:1px solid #292929;
     border-radius:20px;
-
     padding:25px 20px;
-
-    text-align:center;
-
     transition:.25s;
+    box-shadow:0 0 10px rgba(255,0,0,.04);
 }
 
 .card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#e00000;
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,.35);
-}
-
-.icon{
-
-    font-size:48px;
-
-    margin-bottom:15px;
+    border-color:#ff0000;
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(255,0,0,.18);
 }
 
 .card h2{
-
     font-size:20px;
-
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .card p{
-
-    color:#aaa;
-
-    font-size:14px;
-
-    line-height:1.9;
-}
-
-
-/* ORDER BUTTON */
-
-.order{
-
-    display:inline-block;
-
-    margin-top:18px;
-
-    padding:11px 24px;
-
-    border-radius:10px;
-
-    background:#d00000;
-
-    color:white;
-
-    border:none;
-
-    cursor:pointer;
-
-    font-size:14px;
-}
-
-.order:hover{
-
-    background:#ff0000;
-}
-
-
-/* ORDER WINDOW */
-
-#orderBox{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.88);
-
-    z-index:999;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-}
-
-.orderPanel{
-
-    width:100%;
-
-    max-width:430px;
-
-    max-height:90vh;
-
-    overflow-y:auto;
-
-    background:#111;
-
-    border:1px solid #e00000;
-
-    border-radius:22px;
-
-    padding:28px 20px;
-
-    box-shadow:
-    0 0 30px rgba(255,0,0,.45);
-
-    text-align:center;
-}
-
-.orderPanel h2{
-
-    margin-bottom:10px;
-
-    font-size:24px;
-}
-
-.orderPanel p{
-
     color:#999;
-
-    font-size:13px;
-
-    margin-bottom:20px;
-}
-
-
-/* SERVICE OPTIONS */
-
-.serviceOption{
-
-    width:100%;
-
-    padding:14px;
-
-    margin:7px 0;
-
-    border:1px solid #333;
-
-    border-radius:12px;
-
-    background:#090909;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    text-align:right;
-}
-
-.serviceOption:hover{
-
-    border-color:red;
-
-    background:#1a0000;
-}
-
-
-/* SELECTED SERVICE */
-
-#selectedBox{
-
-    display:none;
-
-    margin-top:20px;
-
-    padding:18px;
-
-    border-radius:15px;
-
-    background:#080808;
-
-    border:1px solid #333;
-}
-
-#selectedText{
-
-    color:white;
-
-    margin-bottom:10px;
-
     font-size:14px;
+    line-height:1.9;
+    min-height:55px;
 }
 
-#customerText{
-
+.orderBtn{
     width:100%;
-
-    min-height:100px;
-
-    resize:vertical;
-
-    text-align:right;
-
-    margin-bottom:10px;
-}
-
-.sendBtn{
-
-    width:100%;
-
+    margin-top:18px;
     padding:14px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#d00000;
-
-    color:white;
-
-    cursor:pointer;
-
+    border:1px solid #ff0000;
+    border-radius:12px;
+    background:#170000;
+    color:#fff;
     font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
 
+.orderBtn:hover{
+    background:#ff0000;
+    box-shadow:0 0 15px rgba(255,0,0,.35);
+}
+
+/* ================= SUPPORT ================= */
+
+.support{
+    margin-top:20px;
+    text-align:center;
+    padding:20px;
+    background:#0b0b0b;
+    border:1px solid #222;
+    border-radius:18px;
+}
+
+.support p{
+    color:#999;
+    margin-bottom:12px;
+}
+
+.telegramBtn{
+    display:inline-block;
+    text-decoration:none;
+    background:#0088cc;
+    color:white;
+    padding:13px 25px;
+    border-radius:12px;
     font-weight:bold;
 }
 
-.sendBtn:hover{
+/* ================= ORDER MODAL ================= */
 
-    background:#ff0000;
+#orderBox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
 }
 
-
-/* CLOSE */
-
-.closeBtn{
-
+.orderModal{
     width:100%;
+    max-width:560px;
+    background:#111;
+    border:2px solid #ff0000;
+    border-radius:30px;
+    padding:35px 25px 25px;
+    box-shadow:
+        0 0 30px rgba(255,0,0,.35),
+        0 0 80px rgba(255,0,0,.1);
+}
 
-    margin-top:12px;
+.orderModal h2{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:14px;
+}
 
-    padding:12px;
+.orderModal .subtitle{
+    text-align:center;
+    color:#999;
+    font-size:16px;
+    margin-bottom:25px;
+}
 
+/* خدمت انتخاب شده */
+
+.selectedService{
+    background:#080808;
+    border:1px solid #ff0000;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    color:#fff;
+    font-size:18px;
+    margin-bottom:20px;
+    box-shadow:0 0 12px rgba(255,0,0,.12);
+}
+
+/* توضیحات */
+
+#customerText{
+    width:100%;
+    min-height:150px;
+    resize:vertical;
+    background:#050505;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:17px;
+    outline:none;
+    font-size:15px;
+    line-height:1.8;
+}
+
+#customerText:focus{
+    border-color:#ff0000;
+    box-shadow:0 0 10px rgba(255,0,0,.2);
+}
+
+.sendOrder{
+    width:100%;
+    margin-top:15px;
+    padding:16px;
     border:none;
-
-    border-radius:10px;
-
-    background:#333;
-
-    color:white;
-
+    border-radius:14px;
+    background:linear-gradient(90deg,#a90000,#ff0000);
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
     cursor:pointer;
 }
 
-.closeBtn:hover{
+.closeOrder{
+    width:100%;
+    margin-top:12px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#333;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
 
+.closeOrder:hover{
     background:#444;
 }
 
+/* ================= MOBILE ================= */
 
-/* FOOTER */
-
-.footer{
-
-    text-align:center;
-
-    color:#666;
-
-    margin-top:45px;
-
-    font-size:13px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:500px){
-
-    .logo{
-        font-size:34px;
-    }
-
-    .header h1{
-        font-size:32px;
-    }
+@media(max-width:650px){
 
     .services{
         grid-template-columns:1fr;
     }
 
+    .header h1{
+        font-size:28px;
+    }
+
+    .loginBox{
+        padding:30px 20px;
+    }
+
+    .orderModal{
+        padding:30px 18px 20px;
+    }
+
+    .orderModal h2{
+        font-size:28px;
+    }
+
+    .card{
+        padding:22px 18px;
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================= LOGIN ================= -->
+<!-- ================= LOGIN PAGE ================= -->
 
 <div id="loginPage">
 
     <div class="loginBox">
 
-        <div class="logo">
-            💎 MY SERVICE
-        </div>
-
-        <div class="subtitle">
-            خدمات مجازی • امنیت • ربات • طراحی
-        </div>
-
-        <input
-            id="password"
-            type="password"
-            placeholder="رمز ورود را وارد کنید"
-        >
-
-        <button
-            class="loginBtn"
-            onclick="login()">
-
-            🔐 ورود به سایت
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= MAIN ================= -->
-
-<div id="servicePage">
-
-
-    <div class="header">
-
-        <h1>
-            💎 MY SERVICE
-        </h1>
+        <h1>💎 MY SERVICE</h1>
 
         <p>
             خدمات حرفه‌ای مجازی و دیجیتال
         </p>
 
-    </div>
-
-
-
-    <div class="services">
-
-
-        <!-- ACCOUNT -->
-
-        <div class="card">
-
-            <div class="icon">
-                🔐
-            </div>
-
-            <h2>
-                هک اکانت
-            </h2>
-
-            <p>
-                خدمات بازیابی و ایمن‌سازی
-                اکانت‌های خودتان.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-
-        <!-- BOT -->
-
-        <div class="card">
-
-            <div class="icon">
-                🤖
-            </div>
-
-            <h2>
-                ساخت ربات
-            </h2>
-
-            <p>
-                ساخت ربات و سیستم‌های
-                اتوماتیک برای شبکه‌های اجتماعی.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-
-        <!-- DESIGN -->
-
-        <div class="card">
-
-            <div class="icon">
-                🎨
-            </div>
-
-            <h2>
-                طراحی لوگو و بنر
-            </h2>
-
-            <p>
-                طراحی لوگو، بنر، پوستر
-                و تصاویر تبلیغاتی.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SOCIAL -->
-
-        <div class="card">
-
-            <div class="icon">
-                📱
-            </div>
-
-            <h2>
-                خدمات شبکه اجتماعی
-            </h2>
-
-            <p>
-                طراحی محتوا و خدمات
-                مربوط به شبکه‌های اجتماعی.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-
-        <!-- CUSTOM -->
-
-        <div class="card">
-
-            <div class="icon">
-                🔥
-            </div>
-
-            <h2>
-                سفارش اختصاصی
-            </h2>
-
-            <p>
-                اگر خدمت موردنظر شما
-                در لیست نیست، سفارش دهید.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SUPPORT -->
-
-        <div class="card">
-
-            <div class="icon">
-                💬
-            </div>
-
-            <h2>
-                پشتیبانی
-            </h2>
-
-            <p>
-                برای سوال و پیگیری سفارش
-                با ما در ارتباط باشید.
-            </p>
-
-            <button
-                class="order"
-                onclick="openOrder()">
-
-                🛒 سفارش
-
-            </button>
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="footer">
-
-        © 2026 MY SERVICE
-
-        <br>
-
-        تمامی حقوق محفوظ است
+        <input
+            type="password"
+            id="password"
+            placeholder="🔐 رمز ورود را وارد کنید"
+            autocomplete="off"
+        >
+
+        <button
+            class="loginBtn"
+            onclick="login()"
+        >
+            🔓 ورود به پنل
+        </button>
 
     </div>
 
 </div>
 
 
+<!-- ================= SERVICE PAGE ================= -->
 
-<!-- ================= ORDER WINDOW ================= -->
+<div id="servicePage">
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>
+                💎 MY <span>SERVICE</span>
+            </h1>
+
+            <p>
+                خدمات حرفه‌ای مجازی و دیجیتال
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <!-- 1 -->
+
+            <div class="card">
+
+                <h2>
+                    🔐 هک اکانت
+                </h2>
+
+                <p>
+                    خدمات بازیابی و تأمین امنیت اکانت‌های خودتان
+                </p>
+
+                <button
+                    class="orderBtn"
+                    onclick="openOrder('🔐 هک اکانت')"
+                >
+                    🛒 سفارش
+                </button>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="card">
+
+                <h2>
+                    🤖 ساخت ربات
+                </h2>
+
+                <p>
+                    طراحی و ساخت ربات‌های اختصاصی متناسب با نیاز شما
+                </p>
+
+                <button
+                    class="orderBtn"
+                    onclick="openOrder('🤖 ساخت ربات')"
+                >
+                    🛒 سفارش
+                </button>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="card">
+
+                <h2>
+                    🎨 طراحی لوگو و بنر
+                </h2>
+
+                <p>
+                    طراحی لوگو، بنر و محتوای گرافیکی اختصاصی
+                </p>
+
+                <button
+                    class="orderBtn"
+                    onclick="openOrder('🎨 طراحی لوگو و بنر')"
+                >
+                    🛒 سفارش
+                </button>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="card">
+
+                <h2>
+                    📱 خدمات شبکه اجتماعی
+                </h2>
+
+                <p>
+                    خدمات و مدیریت محتوای شبکه‌های اجتماعی
+                </p>
+
+                <button
+                    class="orderBtn"
+                    onclick="openOrder('📱 خدمات شبکه اجتماعی')"
+                >
+                    🛒 سفارش
+                </button>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="card">
+
+                <h2>
+                    🔥 سفارش اختصاصی
+                </h2>
+
+                <p>
+                    اگر خدمت موردنظر شما در لیست نیست، سفارش اختصاصی ثبت کنید
+                </p>
+
+                <button
+                    class="orderBtn"
+                    onclick="openOrder('🔥 سفارش اختصاصی')"
+                >
+                    🛒 سفارش
+                </button>
+
+            </div>
+
+
+            <!-- 6 -->
+
+            <div class="card">
+
+                <h2>
+                    💬 پشتیبانی
+                </h2>
+
+                <p>
+                    برای ارتباط مستقیم و دریافت راهنمایی با ما در تماس باشید
+                </p>
+
+                <a
+                    class="telegramBtn"
+                    href="https://t.me/Mehdi_nb09"
+                    target="_blank"
+                    style="display:block;text-align:center;margin-top:18px;"
+                >
+                    💬 ارتباط در تلگرام
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+
+        <div class="support">
+
+            <p>
+                برای ثبت سفارش یا پشتیبانی می‌توانید مستقیماً در تلگرام پیام دهید.
+            </p>
+
+            <a
+                class="telegramBtn"
+                href="https://t.me/Mehdi_nb09"
+                target="_blank"
+            >
+                📩 @Mehdi_nb09
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ORDER MODAL ================= -->
 
 <div id="orderBox">
 
-    <div class="orderPanel">
+    <div class="orderModal">
 
         <h2>
             🛒 ثبت سفارش
         </h2>
 
-        <p>
-            خدمت موردنظر خود را انتخاب کنید
-        </p>
-
-
-        <button
-            class="serviceOption"
-            onclick="selectService('🔐 هک اکانت')">
-
-            🔐 هک اکانت
-
-        </button>
-
-
-        <button
-            class="serviceOption"
-            onclick="selectService('🤖 ساخت ربات')">
-
-            🤖 ساخت ربات
-
-        </button>
-
-
-        <button
-            class="serviceOption"
-            onclick="selectService('🎨 طراحی لوگو و بنر')">
-
-            🎨 طراحی لوگو و بنر
-
-        </button>
-
-
-        <button
-            class="serviceOption"
-            onclick="selectService('📱 خدمات شبکه اجتماعی')">
-
-            📱 خدمات شبکه اجتماعی
-
-        </button>
-
-
-        <button
-            class="serviceOption"
-            onclick="selectService('🔥 سفارش اختصاصی')">
-
-            🔥 سفارش اختصاصی
-
-        </button>
-
-
-
-        <div id="selectedBox">
-
-            <div id="selectedText">
-                خدمت انتخاب‌شده:
-            </div>
-
-            <input
-                id="customerText"
-                type="text"
-                placeholder="توضیحات سفارش را بنویسید"
-            >
-
-            <button
-                class="sendBtn"
-                onclick="sendOrder()">
-
-                📩 ارسال سفارش
-
-            </button>
-
+        <div class="subtitle">
+            اطلاعات سفارش خود را وارد کنید
         </div>
 
 
+        <!-- فقط خدمت همان دکمه -->
+
+        <div
+            class="selectedService"
+            id="selectedText"
+        >
+            خدمت انتخاب‌شده
+        </div>
+
+
+        <textarea
+            id="customerText"
+            placeholder="📝 توضیحات سفارش خود را بنویسید..."
+        ></textarea>
+
 
         <button
-            class="closeBtn"
-            onclick="closeOrder()">
+            class="sendOrder"
+            onclick="sendOrder()"
+        >
+            📩 ارسال سفارش
+        </button>
 
+
+        <button
+            class="closeOrder"
+            onclick="closeOrder()"
+        >
             بستن
-
         </button>
 
     </div>
@@ -838,11 +598,9 @@ input:focus{
 </div>
 
 
-
 <script>
 
-
-/* ================= PASSWORD ================= */
+/* ================= LOGIN ================= */
 
 const ACCESS_CODE = "MYFILM123";
 
@@ -850,31 +608,19 @@ const ACCESS_CODE = "MYFILM123";
 function login(){
 
     const password =
-        document
-        .getElementById("password")
-        .value
-        .trim();
-
+        document.getElementById("password").value.trim();
 
     if(password === ACCESS_CODE){
 
-        document
-        .getElementById("loginPage")
-        .style.display = "none";
+        document.getElementById("loginPage").style.display = "none";
 
-
-        document
-        .getElementById("servicePage")
-        .style.display = "block";
-
+        document.getElementById("servicePage").style.display = "block";
 
     }else{
 
         alert("❌ رمز ورود اشتباه است");
 
-        document
-        .getElementById("password")
-        .value = "";
+        document.getElementById("password").value = "";
 
     }
 
@@ -886,62 +632,49 @@ function login(){
 let selectedService = "";
 
 
-function openOrder(){
+/*
+    هر دکمه سفارش اسم خدمت خودش را
+    به این تابع می‌فرستد.
+*/
 
-    document
-    .getElementById("orderBox")
-    .style.display = "flex";
+function openOrder(service){
+
+    selectedService = service;
+
+    document.getElementById("selectedText").innerText =
+        "✅ خدمت انتخاب‌شده: " + service;
+
+    document.getElementById("customerText").value = "";
+
+    document.getElementById("orderBox").style.display = "flex";
 
 }
 
 
+/* ================= CLOSE ORDER ================= */
+
 function closeOrder(){
 
-    document
-    .getElementById("orderBox")
-    .style.display = "none";
+    document.getElementById("orderBox").style.display = "none";
 
-    document
-    .getElementById("selectedBox")
-    .style.display = "none";
-
-    document
-    .getElementById("customerText")
-    .value = "";
+    document.getElementById("customerText").value = "";
 
     selectedService = "";
 
 }
 
 
-function selectService(service){
-
-    selectedService = service;
-
-    document
-    .getElementById("selectedBox")
-    .style.display = "block";
-
-    document
-    .getElementById("selectedText")
-    .innerText =
-    "✅ خدمت انتخاب‌شده: " + service;
-
-}
-
+/* ================= SEND ORDER ================= */
 
 function sendOrder(){
 
     const details =
-        document
-        .getElementById("customerText")
-        .value
-        .trim();
+        document.getElementById("customerText").value.trim();
 
 
     if(selectedService === ""){
 
-        alert("⚠️ ابتدا یک خدمت انتخاب کنید");
+        alert("⚠️ خدمت انتخاب نشده است");
 
         return;
 
@@ -960,7 +693,8 @@ function sendOrder(){
     const message =
         "🛒 سفارش جدید MY SERVICE\n\n" +
         "📌 خدمت: " + selectedService + "\n\n" +
-        "📝 توضیحات:\n" + details + "\n\n" +
+        "📝 توضیحات:\n" +
+        details + "\n\n" +
         "👤 ارسال به: @Mehdi_nb09";
 
 
@@ -969,21 +703,16 @@ function sendOrder(){
         encodeURIComponent(message);
 
 
-    window.open(
-        telegramURL,
-        "_blank"
-    );
+    window.open(telegramURL, "_blank");
 
 }
 
 
-/* ================= ENTER ================= */
+/* ================= ENTER LOGIN ================= */
 
 document
-.getElementById("password")
-.addEventListener(
-    "keydown",
-    function(event){
+    .getElementById("password")
+    .addEventListener("keydown", function(event){
 
         if(event.key === "Enter"){
 
@@ -991,12 +720,24 @@ document
 
         }
 
-    }
-);
+    });
+
+
+/* ================= CLOSE MODAL BY BACKGROUND ================= */
+
+document
+    .getElementById("orderBox")
+    .addEventListener("click", function(event){
+
+        if(event.target === this){
+
+            closeOrder();
+
+        }
+
+    });
 
 </script>
 
-
 </body>
-
     </html>
