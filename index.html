@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MY SERVICE</title>
@@ -41,7 +44,7 @@ body{
     width:100%;
     max-width:420px;
 
-    background:rgba(12,12,12,.96);
+    background:rgba(12,12,12,.97);
 
     border:1px solid #e00000;
 
@@ -249,13 +252,11 @@ input:focus{
 
     color:white;
 
-    text-decoration:none;
-
-    font-size:14px;
-
     border:none;
 
     cursor:pointer;
+
+    font-size:14px;
 }
 
 .order:hover{
@@ -264,7 +265,7 @@ input:focus{
 }
 
 
-/* ORDER BOX */
+/* ORDER WINDOW */
 
 #orderBox{
 
@@ -274,7 +275,7 @@ input:focus{
 
     inset:0;
 
-    background:rgba(0,0,0,.85);
+    background:rgba(0,0,0,.88);
 
     z-index:999;
 
@@ -290,6 +291,10 @@ input:focus{
     width:100%;
 
     max-width:430px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
 
     background:#111;
 
@@ -321,13 +326,16 @@ input:focus{
     margin-bottom:20px;
 }
 
+
+/* SERVICE OPTIONS */
+
 .serviceOption{
 
     width:100%;
 
     padding:14px;
 
-    margin:8px 0;
+    margin:7px 0;
 
     border:1px solid #333;
 
@@ -351,11 +359,80 @@ input:focus{
     background:#1a0000;
 }
 
+
+/* SELECTED SERVICE */
+
+#selectedBox{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#080808;
+
+    border:1px solid #333;
+}
+
+#selectedText{
+
+    color:white;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+}
+
+#customerText{
+
+    width:100%;
+
+    min-height:100px;
+
+    resize:vertical;
+
+    text-align:right;
+
+    margin-bottom:10px;
+}
+
+.sendBtn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d00000;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+}
+
+.sendBtn:hover{
+
+    background:#ff0000;
+}
+
+
+/* CLOSE */
+
 .closeBtn{
 
     width:100%;
 
-    margin-top:15px;
+    margin-top:12px;
 
     padding:12px;
 
@@ -373,50 +450,6 @@ input:focus{
 .closeBtn:hover{
 
     background:#444;
-}
-
-
-/* SELECTED ORDER */
-
-#selectedBox{
-
-    display:none;
-
-    margin-top:20px;
-
-    padding:18px;
-
-    border-radius:15px;
-
-    background:#080808;
-
-    border:1px solid #333;
-}
-
-#selectedBox input{
-
-    margin-top:12px;
-
-    margin-bottom:10px;
-}
-
-.sendBtn{
-
-    width:100%;
-
-    padding:13px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#d00000;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:15px;
 }
 
 
@@ -453,13 +486,14 @@ input:focus{
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- LOGIN -->
+<!-- ================= LOGIN ================= -->
 
 <div id="loginPage">
 
@@ -470,7 +504,7 @@ input:focus{
         </div>
 
         <div class="subtitle">
-            خدمات مجازی • طراحی • امنیت • شبکه‌های اجتماعی
+            خدمات مجازی • امنیت • ربات • طراحی
         </div>
 
         <input
@@ -493,7 +527,7 @@ input:focus{
 
 
 
-<!-- MAIN PAGE -->
+<!-- ================= MAIN ================= -->
 
 <div id="servicePage">
 
@@ -691,6 +725,7 @@ input:focus{
     </div>
 
 
+
     <div class="footer">
 
         © 2026 MY SERVICE
@@ -705,7 +740,7 @@ input:focus{
 
 
 
-<!-- ORDER WINDOW -->
+<!-- ================= ORDER WINDOW ================= -->
 
 <div id="orderBox">
 
@@ -765,6 +800,7 @@ input:focus{
         </button>
 
 
+
         <div id="selectedBox">
 
             <div id="selectedText">
@@ -774,7 +810,7 @@ input:focus{
             <input
                 id="customerText"
                 type="text"
-                placeholder="توضیحات سفارش خود را بنویسید"
+                placeholder="توضیحات سفارش را بنویسید"
             >
 
             <button
@@ -786,6 +822,7 @@ input:focus{
             </button>
 
         </div>
+
 
 
         <button
@@ -805,7 +842,7 @@ input:focus{
 <script>
 
 
-/* PASSWORD */
+/* ================= PASSWORD ================= */
 
 const ACCESS_CODE = "MYFILM123";
 
@@ -825,9 +862,11 @@ function login(){
         .getElementById("loginPage")
         .style.display = "none";
 
+
         document
         .getElementById("servicePage")
         .style.display = "block";
+
 
     }else{
 
@@ -842,7 +881,10 @@ function login(){
 }
 
 
-/* ORDER */
+/* ================= ORDER ================= */
+
+let selectedService = "";
+
 
 function openOrder(){
 
@@ -859,10 +901,22 @@ function closeOrder(){
     .getElementById("orderBox")
     .style.display = "none";
 
+    document
+    .getElementById("selectedBox")
+    .style.display = "none";
+
+    document
+    .getElementById("customerText")
+    .value = "";
+
+    selectedService = "";
+
 }
 
 
 function selectService(service){
+
+    selectedService = service;
 
     document
     .getElementById("selectedBox")
@@ -871,63 +925,78 @@ function selectService(service){
     document
     .getElementById("selectedText")
     .innerText =
-    "خدمت انتخاب‌شده: " + service;
+    "✅ خدمت انتخاب‌شده: " + service;
 
 }
+
 
 function sendOrder(){
 
-const text =
-document
-.getElementById("customerText")
-.value
-.trim();
+    const details =
+        document
+        .getElementById("customerText")
+        .value
+        .trim();
 
 
-if(text === ""){
+    if(selectedService === ""){
 
-alert("⚠️ توضیحات سفارش را بنویسید");
-return;
+        alert("⚠️ ابتدا یک خدمت انتخاب کنید");
+
+        return;
+
+    }
+
+
+    if(details === ""){
+
+        alert("⚠️ لطفاً توضیحات سفارش را بنویسید");
+
+        return;
+
+    }
+
+
+    const message =
+        "🛒 سفارش جدید MY SERVICE\n\n" +
+        "📌 خدمت: " + selectedService + "\n\n" +
+        "📝 توضیحات:\n" + details + "\n\n" +
+        "👤 ارسال به: @Mehdi_nb09";
+
+
+    const telegramURL =
+        "https://t.me/Mehdi_nb09?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        telegramURL,
+        "_blank"
+    );
 
 }
 
 
-let message =
-"🛒 سفارش جدید MY SERVICE\n\n" +
-"📌 توضیحات:\n" +
-text;
-
-
-let telegram =
-"https://t.me/@Mehdi_nb09
-
-
-window.open(
-telegram + "?text=" + encodeURIComponent(message),
-"_blank"
-);
-
-
-    }
-
-
-
-/* ENTER LOGIN */
+/* ================= ENTER ================= */
 
 document
 .getElementById("password")
-.addEventListener("keydown",function(event){
+.addEventListener(
+    "keydown",
+    function(event){
 
-    if(event.key === "Enter"){
+        if(event.key === "Enter"){
 
-        login();
+            login();
+
+        }
 
     }
-
-});
+);
 
 </script>
 
 
 </body>
-            </html>
+
+    </html>
