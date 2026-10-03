@@ -875,32 +875,41 @@ function selectService(service){
 
 }
 
-
 function sendOrder(){
 
-    const text =
-    document
-    .getElementById("customerText")
-    .value
-    .trim();
+const text =
+document
+.getElementById("customerText")
+.value
+.trim();
 
 
-    if(text === ""){
+if(text === ""){
 
-        alert("⚠️ لطفاً توضیحات سفارش را بنویسید");
+alert("⚠️ توضیحات سفارش را بنویسید");
+return;
 
-        return;
+}
+
+
+let message =
+"🛒 سفارش جدید MY SERVICE\n\n" +
+"📌 توضیحات:\n" +
+text;
+
+
+let telegram =
+"https://t.me/@Mehdi_nb09
+
+
+window.open(
+telegram + "?text=" + encodeURIComponent(message),
+"_blank"
+);
+
 
     }
 
-
-    alert(
-        "✅ سفارش شما ثبت شد!\n\n" +
-        "برای اتصال سفارش‌ها به تلگرام، " +
-        "آیدی تلگرام خودت را در کد قرار می‌دهیم."
-    );
-
-}
 
 
 /* ENTER LOGIN */
