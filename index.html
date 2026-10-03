@@ -3,26 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MY SERVICE</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Tahoma, Arial, sans-serif;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
 body{
     background:
-        radial-gradient(circle at top, #250000 0%, #080000 45%, #000 100%);
+        radial-gradient(circle at top,#250000 0%,#080000 45%,#000 100%);
     color:#fff;
     min-height:100vh;
 }
 
-/* ================= LOGIN ================= */
+/* LOGIN */
 
 #loginPage{
     min-height:100vh;
@@ -48,7 +46,6 @@ body{
 .loginBox h1{
     font-size:35px;
     margin-bottom:12px;
-    color:#fff;
 }
 
 .loginBox p{
@@ -87,7 +84,7 @@ body{
     cursor:pointer;
 }
 
-/* ================= SERVICE PAGE ================= */
+/* SERVICE PAGE */
 
 #servicePage{
     display:none;
@@ -120,7 +117,7 @@ body{
     font-size:16px;
 }
 
-/* ================= CARDS ================= */
+/* SERVICES */
 
 .services{
     display:grid;
@@ -174,7 +171,49 @@ body{
     box-shadow:0 0 15px rgba(255,0,0,.35);
 }
 
-/* ================= SUPPORT ================= */
+/* HELP */
+
+.helpSection{
+    margin-top:25px;
+    background:#0b0b0b;
+    border:1px solid #ff0000;
+    border-radius:22px;
+    padding:28px 20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,0,0,.12);
+}
+
+.helpIcon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.helpSection h2{
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.helpSection p{
+    color:#aaa;
+    font-size:15px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.helpBtn{
+    width:100%;
+    max-width:450px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#8b0000,#ff0000);
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* SUPPORT */
 
 .support{
     margin-top:20px;
@@ -194,15 +233,16 @@ body{
     display:inline-block;
     text-decoration:none;
     background:#0088cc;
-    color:white;
+    color:#fff;
     padding:13px 25px;
     border-radius:12px;
     font-weight:bold;
 }
 
-/* ================= ORDER MODAL ================= */
+/* MODALS */
 
-#orderBox{
+#orderBox,
+#helpBox{
     display:none;
     position:fixed;
     inset:0;
@@ -213,7 +253,8 @@ body{
     padding:18px;
 }
 
-.orderModal{
+.orderModal,
+.helpModal{
     width:100%;
     max-width:560px;
     background:#111;
@@ -225,20 +266,20 @@ body{
         0 0 80px rgba(255,0,0,.1);
 }
 
-.orderModal h2{
+.orderModal h2,
+.helpModal h2{
     text-align:center;
-    font-size:32px;
+    font-size:30px;
     margin-bottom:14px;
 }
 
-.orderModal .subtitle{
+.subtitle{
     text-align:center;
     color:#999;
-    font-size:16px;
+    font-size:15px;
+    line-height:1.8;
     margin-bottom:25px;
 }
-
-/* خدمت انتخاب شده */
 
 .selectedService{
     background:#080808;
@@ -252,12 +293,9 @@ body{
     box-shadow:0 0 12px rgba(255,0,0,.12);
 }
 
-/* توضیحات */
-
-#customerText{
+.formInput,
+.formTextarea{
     width:100%;
-    min-height:150px;
-    resize:vertical;
     background:#050505;
     color:#fff;
     border:1px solid #333;
@@ -265,17 +303,25 @@ body{
     padding:17px;
     outline:none;
     font-size:15px;
+    margin-bottom:14px;
+}
+
+.formTextarea{
+    min-height:150px;
+    resize:vertical;
     line-height:1.8;
 }
 
-#customerText:focus{
+.formInput:focus,
+.formTextarea:focus{
     border-color:#ff0000;
     box-shadow:0 0 10px rgba(255,0,0,.2);
 }
 
-.sendOrder{
+.sendOrder,
+.sendHelp{
     width:100%;
-    margin-top:15px;
+    margin-top:5px;
     padding:16px;
     border:none;
     border-radius:14px;
@@ -286,7 +332,8 @@ body{
     cursor:pointer;
 }
 
-.closeOrder{
+.closeOrder,
+.closeHelp{
     width:100%;
     margin-top:12px;
     padding:15px;
@@ -298,11 +345,7 @@ body{
     cursor:pointer;
 }
 
-.closeOrder:hover{
-    background:#444;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:650px){
 
@@ -318,25 +361,26 @@ body{
         padding:30px 20px;
     }
 
-    .orderModal{
+    .orderModal,
+    .helpModal{
         padding:30px 18px 20px;
     }
 
-    .orderModal h2{
-        font-size:28px;
+    .orderModal h2,
+    .helpModal h2{
+        font-size:27px;
     }
 
     .card{
         padding:22px 18px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= LOGIN PAGE ================= -->
+<!-- ================= LOGIN ================= -->
 
 <div id="loginPage">
 
@@ -385,6 +429,8 @@ body{
 
         </div>
 
+
+        <!-- ================= SERVICES ================= -->
 
         <div class="services">
 
@@ -437,28 +483,6 @@ body{
             <div class="card">
 
                 <h2>
-                    🎨 طراحی لوگو و بنر
-                </h2>
-
-                <p>
-                    طراحی لوگو، بنر و محتوای گرافیکی اختصاصی
-                </p>
-
-                <button
-                    class="orderBtn"
-                    onclick="openOrder('🎨 طراحی لوگو و بنر')"
-                >
-                    🛒 سفارش
-                </button>
-
-            </div>
-
-
-            <!-- 4 -->
-
-            <div class="card">
-
-                <h2>
                     📱 خدمات شبکه اجتماعی
                 </h2>
 
@@ -476,21 +500,21 @@ body{
             </div>
 
 
-            <!-- 5 -->
+            <!-- 4 -->
 
             <div class="card">
 
                 <h2>
-                    🔥 سفارش اختصاصی
+                    📱 رفع تعلیق روبیکا
                 </h2>
 
                 <p>
-                    اگر خدمت موردنظر شما در لیست نیست، سفارش اختصاصی ثبت کنید
+                    بررسی وضعیت حساب و راهنمایی برای پیگیری رفع تعلیق از مسیرهای رسمی روبیکا
                 </p>
 
                 <button
                     class="orderBtn"
-                    onclick="openOrder('🔥 سفارش اختصاصی')"
+                    onclick="openOrder('📱 رفع تعلیق روبیکا')"
                 >
                     🛒 سفارش
                 </button>
@@ -498,7 +522,7 @@ body{
             </div>
 
 
-            <!-- 6 -->
+            <!-- 5 -->
 
             <div class="card">
 
@@ -524,7 +548,35 @@ body{
         </div>
 
 
-        <!-- SUPPORT -->
+        <!-- ================= FREE HELP ================= -->
+
+        <div class="helpSection">
+
+            <div class="helpIcon">
+                🤝
+            </div>
+
+            <h2>
+                کمک رایگان
+            </h2>
+
+            <p>
+                اگر کاری داری که انجام دادنش برات سخته،
+                درخواستت رو بنویس.<br>
+                اگر از دستمون بربیاد، بدون هزینه کمکت می‌کنیم.
+            </p>
+
+            <button
+                class="helpBtn"
+                onclick="openHelp()"
+            >
+                🆘 درخواست کمک رایگان
+            </button>
+
+        </div>
+
+
+        <!-- ================= SUPPORT ================= -->
 
         <div class="support">
 
@@ -561,9 +613,6 @@ body{
             اطلاعات سفارش خود را وارد کنید
         </div>
 
-
-        <!-- فقط خدمت همان دکمه -->
-
         <div
             class="selectedService"
             id="selectedText"
@@ -571,12 +620,12 @@ body{
             خدمت انتخاب‌شده
         </div>
 
-
         <textarea
+            class="formTextarea"
             id="customerText"
             placeholder="📝 توضیحات سفارش خود را بنویسید..."
+            maxlength="3000"
         ></textarea>
-
 
         <button
             class="sendOrder"
@@ -585,10 +634,58 @@ body{
             📩 ارسال سفارش
         </button>
 
-
         <button
             class="closeOrder"
             onclick="closeOrder()"
+        >
+            بستن
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HELP MODAL ================= -->
+
+<div id="helpBox">
+
+    <div class="helpModal">
+
+        <h2>
+            🤝 درخواست کمک
+        </h2>
+
+        <div class="subtitle">
+            درخواستت رو با جزئیات بنویس.
+            اگر از دستمون بربیاد، بدون هزینه انجامش می‌دیم.
+        </div>
+
+        <input
+            class="formInput"
+            type="text"
+            id="helpName"
+            placeholder="👤 نام یا اسم مستعار"
+            maxlength="80"
+        >
+
+        <textarea
+            class="formTextarea"
+            id="helpText"
+            placeholder="📝 دقیقاً برای چه کاری کمک می‌خواهید؟"
+            maxlength="2000"
+        ></textarea>
+
+        <button
+            class="sendHelp"
+            onclick="sendHelp()"
+        >
+            📩 ارسال درخواست کمک
+        </button>
+
+        <button
+            class="closeHelp"
+            onclick="closeHelp()"
         >
             بستن
         </button>
@@ -603,7 +700,6 @@ body{
 /* ================= LOGIN ================= */
 
 const ACCESS_CODE = "MYFILM123";
-
 
 function login(){
 
@@ -623,19 +719,12 @@ function login(){
         document.getElementById("password").value = "";
 
     }
-
 }
 
 
 /* ================= ORDER ================= */
 
 let selectedService = "";
-
-
-/*
-    هر دکمه سفارش اسم خدمت خودش را
-    به این تابع می‌فرستد.
-*/
 
 function openOrder(service){
 
@@ -647,11 +736,8 @@ function openOrder(service){
     document.getElementById("customerText").value = "";
 
     document.getElementById("orderBox").style.display = "flex";
-
 }
 
-
-/* ================= CLOSE ORDER ================= */
 
 function closeOrder(){
 
@@ -660,35 +746,27 @@ function closeOrder(){
     document.getElementById("customerText").value = "";
 
     selectedService = "";
-
 }
 
-
-/* ================= SEND ORDER ================= */
 
 function sendOrder(){
 
     const details =
         document.getElementById("customerText").value.trim();
 
-
     if(selectedService === ""){
 
         alert("⚠️ خدمت انتخاب نشده است");
 
         return;
-
     }
-
 
     if(details === ""){
 
         alert("⚠️ لطفاً توضیحات سفارش را بنویسید");
 
         return;
-
     }
-
 
     const message =
         "🛒 سفارش جدید MY SERVICE\n\n" +
@@ -697,14 +775,70 @@ function sendOrder(){
         details + "\n\n" +
         "👤 ارسال به: @Mehdi_nb09";
 
+    const telegramURL =
+        "https://t.me/Mehdi_nb09?text=" +
+        encodeURIComponent(message);
+
+    window.open(telegramURL,"_blank");
+}
+
+
+/* ================= FREE HELP ================= */
+
+function openHelp(){
+
+    document.getElementById("helpName").value = "";
+
+    document.getElementById("helpText").value = "";
+
+    document.getElementById("helpBox").style.display = "flex";
+}
+
+
+function closeHelp(){
+
+    document.getElementById("helpBox").style.display = "none";
+
+    document.getElementById("helpName").value = "";
+
+    document.getElementById("helpText").value = "";
+}
+
+
+function sendHelp(){
+
+    const name =
+        document.getElementById("helpName").value.trim();
+
+    const helpText =
+        document.getElementById("helpText").value.trim();
+
+    if(name === ""){
+
+        alert("⚠️ لطفاً نام یا اسم مستعار خود را وارد کنید");
+
+        return;
+    }
+
+    if(helpText === ""){
+
+        alert("⚠️ لطفاً درخواست کمک خود را بنویسید");
+
+        return;
+    }
+
+    const message =
+        "🤝 درخواست کمک رایگان MY SERVICE\n\n" +
+        "👤 نام: " + name + "\n\n" +
+        "📝 درخواست:\n" +
+        helpText + "\n\n" +
+        "📩 دریافت‌کننده: @Mehdi_nb09";
 
     const telegramURL =
         "https://t.me/Mehdi_nb09?text=" +
         encodeURIComponent(message);
 
-
-    window.open(telegramURL, "_blank");
-
+    window.open(telegramURL,"_blank");
 }
 
 
@@ -712,27 +846,34 @@ function sendOrder(){
 
 document
     .getElementById("password")
-    .addEventListener("keydown", function(event){
+    .addEventListener("keydown",function(event){
 
         if(event.key === "Enter"){
-
             login();
-
         }
 
     });
 
 
-/* ================= CLOSE MODAL BY BACKGROUND ================= */
+/* ================= CLOSE MODALS ================= */
 
 document
     .getElementById("orderBox")
-    .addEventListener("click", function(event){
+    .addEventListener("click",function(event){
 
         if(event.target === this){
-
             closeOrder();
+        }
 
+    });
+
+
+document
+    .getElementById("helpBox")
+    .addEventListener("click",function(event){
+
+        if(event.target === this){
+            closeHelp();
         }
 
     });
@@ -740,4 +881,4 @@ document
 </script>
 
 </body>
-    </html>
+            </html>
