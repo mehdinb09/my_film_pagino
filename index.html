@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -14,110 +15,110 @@
 }
 
 body{
-    background:
-        radial-gradient(circle at top,#250000 0%,#080000 45%,#000 100%);
-    color:#fff;
     min-height:100vh;
+    background:
+        radial-gradient(circle at top,#420000 0%,#160000 35%,#050505 75%);
+    color:white;
 }
 
-/* LOGIN */
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:auto;
+}
 
-#loginPage{
+.loginPage{
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    padding:20px;
+    justify-content:center;
 }
 
 .loginBox{
     width:100%;
     max-width:430px;
-    background:#111;
-    border:1px solid #ff0000;
+    background:rgba(15,15,15,.94);
+    border:1px solid #7b0000;
     border-radius:25px;
     padding:35px 25px;
     text-align:center;
-    box-shadow:
-        0 0 20px rgba(255,0,0,.35),
-        inset 0 0 30px rgba(255,0,0,.05);
+    box-shadow:0 0 35px rgba(255,0,0,.25);
 }
 
-.loginBox h1{
-    font-size:35px;
+.logo{
+    font-size:34px;
+    font-weight:bold;
     margin-bottom:12px;
 }
 
-.loginBox p{
+.logo span{
+    color:#ff2020;
+}
+
+.subtitle{
     color:#aaa;
-    font-size:15px;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-#password{
+input,textarea{
     width:100%;
-    padding:17px;
+    background:#090909;
+    color:white;
+    border:1px solid #550000;
     border-radius:14px;
-    border:1px solid #444;
+    padding:15px;
     outline:none;
-    background:#050505;
-    color:#fff;
-    font-size:16px;
-    text-align:center;
-    margin-bottom:15px;
+    margin-bottom:14px;
+    font-size:15px;
 }
 
-#password:focus{
-    border-color:#ff0000;
-    box-shadow:0 0 10px rgba(255,0,0,.3);
+input:focus,textarea:focus{
+    border-color:#ff2020;
+    box-shadow:0 0 10px rgba(255,0,0,.2);
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    transition:.2s;
 }
 
 .loginBtn{
     width:100%;
-    padding:16px;
-    border:none;
+    padding:15px;
     border-radius:14px;
-    background:linear-gradient(90deg,#b00000,#ff0000);
-    color:#fff;
+    background:linear-gradient(135deg,#ff2020,#8b0000);
+    color:white;
     font-size:17px;
     font-weight:bold;
-    cursor:pointer;
 }
 
-/* SERVICE PAGE */
+.loginBtn:hover{
+    transform:scale(1.02);
+}
 
 #servicePage{
     display:none;
-    min-height:100vh;
-    padding:25px 15px 50px;
-}
-
-.container{
-    width:100%;
-    max-width:800px;
-    margin:auto;
+    padding:35px 0;
 }
 
 .header{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .header h1{
-    font-size:34px;
+    font-size:35px;
     margin-bottom:10px;
 }
 
 .header h1 span{
-    color:#ff0000;
+    color:#ff2020;
 }
 
 .header p{
-    color:#999;
-    font-size:16px;
+    color:#aaa;
 }
-
-/* SERVICES */
 
 .services{
     display:grid;
@@ -126,253 +127,161 @@ body{
 }
 
 .card{
-    background:#0b0b0b;
-    border:1px solid #292929;
-    border-radius:20px;
-    padding:25px 20px;
+    background:linear-gradient(145deg,#151515,#090909);
+    border:1px solid #4c0000;
+    border-radius:22px;
+    padding:24px;
+    box-shadow:0 0 20px rgba(255,0,0,.08);
     transition:.25s;
-    box-shadow:0 0 10px rgba(255,0,0,.04);
 }
 
 .card:hover{
-    border-color:#ff0000;
-    transform:translateY(-3px);
-    box-shadow:0 0 20px rgba(255,0,0,.18);
+    transform:translateY(-4px);
+    border-color:#ff2020;
+    box-shadow:0 0 25px rgba(255,0,0,.18);
 }
 
 .card h2{
-    font-size:20px;
-    margin-bottom:12px;
+    font-size:21px;
+    margin-bottom:10px;
 }
 
 .card p{
-    color:#999;
+    color:#aaa;
+    line-height:1.8;
     font-size:14px;
-    line-height:1.9;
-    min-height:55px;
+    min-height:50px;
 }
 
 .orderBtn{
     width:100%;
-    margin-top:18px;
-    padding:14px;
-    border:1px solid #ff0000;
-    border-radius:12px;
-    background:#170000;
-    color:#fff;
-    font-size:15px;
+    margin-top:17px;
+    padding:13px;
+    border-radius:13px;
+    background:#a00000;
+    color:white;
     font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
 }
 
 .orderBtn:hover{
-    background:#ff0000;
-    box-shadow:0 0 15px rgba(255,0,0,.35);
+    background:#e00000;
 }
 
-/* HELP */
+.support{
+    text-decoration:none;
+    display:block;
+    margin-top:17px;
+    text-align:center;
+    padding:13px;
+    border-radius:13px;
+    background:#a00000;
+    color:white;
+    font-weight:bold;
+}
 
 .helpSection{
-    margin-top:25px;
-    background:#0b0b0b;
-    border:1px solid #ff0000;
-    border-radius:22px;
-    padding:28px 20px;
+    margin-top:30px;
+    background:linear-gradient(145deg,#171717,#090909);
+    border:1px solid #4c0000;
+    border-radius:24px;
+    padding:30px 22px;
     text-align:center;
-    box-shadow:0 0 20px rgba(255,0,0,.12);
 }
 
 .helpIcon{
-    font-size:42px;
+    font-size:45px;
     margin-bottom:10px;
 }
 
 .helpSection h2{
-    font-size:26px;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .helpSection p{
     color:#aaa;
-    font-size:15px;
     line-height:2;
-    margin-bottom:20px;
 }
 
 .helpBtn{
-    width:100%;
-    max-width:450px;
-    padding:16px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(90deg,#8b0000,#ff0000);
-    color:#fff;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* SUPPORT */
-
-.support{
     margin-top:20px;
-    text-align:center;
-    padding:20px;
-    background:#0b0b0b;
-    border:1px solid #222;
-    border-radius:18px;
-}
-
-.support p{
-    color:#999;
-    margin-bottom:12px;
-}
-
-.telegramBtn{
-    display:inline-block;
-    text-decoration:none;
-    background:#0088cc;
-    color:#fff;
-    padding:13px 25px;
-    border-radius:12px;
+    padding:14px 25px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ff2020,#8b0000);
+    color:white;
+    font-size:16px;
     font-weight:bold;
 }
 
-/* MODALS */
+.footer{
+    text-align:center;
+    color:#777;
+    margin-top:35px;
+    padding-bottom:20px;
+}
 
-#orderBox,
-#helpBox{
-    display:none;
+.modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.85);
-    z-index:9999;
+    background:rgba(0,0,0,.82);
+    display:none;
     align-items:center;
     justify-content:center;
-    padding:18px;
+    padding:20px;
+    z-index:999;
 }
 
-.orderModal,
-.helpModal{
+.modalBox{
     width:100%;
-    max-width:560px;
-    background:#111;
-    border:2px solid #ff0000;
-    border-radius:30px;
-    padding:35px 25px 25px;
-    box-shadow:
-        0 0 30px rgba(255,0,0,.35),
-        0 0 80px rgba(255,0,0,.1);
+    max-width:470px;
+    background:#101010;
+    border:1px solid #770000;
+    border-radius:23px;
+    padding:25px;
+    box-shadow:0 0 35px rgba(255,0,0,.25);
 }
 
-.orderModal h2,
-.helpModal h2{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:14px;
+.modalBox h2{
+    margin-bottom:15px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#999;
-    font-size:15px;
-    line-height:1.8;
-    margin-bottom:25px;
+.selected{
+    background:#190000;
+    border:1px solid #5d0000;
+    padding:13px;
+    border-radius:12px;
+    margin-bottom:15px;
+    color:#ff7777;
 }
 
-.selectedService{
-    background:#080808;
-    border:1px solid #ff0000;
-    border-radius:15px;
-    padding:18px;
-    text-align:center;
-    color:#fff;
-    font-size:18px;
-    margin-bottom:20px;
-    box-shadow:0 0 12px rgba(255,0,0,.12);
-}
-
-.formInput,
-.formTextarea{
+.sendBtn{
     width:100%;
-    background:#050505;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:15px;
-    padding:17px;
-    outline:none;
-    font-size:15px;
-    margin-bottom:14px;
-}
-
-.formTextarea{
-    min-height:150px;
-    resize:vertical;
-    line-height:1.8;
-}
-
-.formInput:focus,
-.formTextarea:focus{
-    border-color:#ff0000;
-    box-shadow:0 0 10px rgba(255,0,0,.2);
-}
-
-.sendOrder,
-.sendHelp{
-    width:100%;
-    margin-top:5px;
-    padding:16px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(90deg,#a90000,#ff0000);
-    color:#fff;
-    font-size:17px;
+    padding:14px;
+    border-radius:13px;
+    background:#009b45;
+    color:white;
     font-weight:bold;
-    cursor:pointer;
+    margin-bottom:10px;
 }
 
-.closeOrder,
-.closeHelp{
+.closeBtn{
     width:100%;
-    margin-top:12px;
-    padding:15px;
-    border:none;
-    border-radius:14px;
-    background:#333;
-    color:#fff;
-    font-size:16px;
-    cursor:pointer;
+    padding:13px;
+    border-radius:13px;
+    background:#292929;
+    color:white;
 }
-
-/* MOBILE */
 
 @media(max-width:650px){
-
     .services{
         grid-template-columns:1fr;
     }
 
     .header h1{
-        font-size:28px;
+        font-size:29px;
     }
 
-    .loginBox{
-        padding:30px 20px;
-    }
-
-    .orderModal,
-    .helpModal{
-        padding:30px 18px 20px;
-    }
-
-    .orderModal h2,
-    .helpModal h2{
-        font-size:27px;
-    }
-
-    .card{
-        padding:22px 18px;
+    .card h2{
+        font-size:19px;
     }
 }
 </style>
@@ -380,185 +289,144 @@ body{
 
 <body>
 
-<!-- ================= LOGIN ================= -->
-
-<div id="loginPage">
-
+<!-- LOGIN -->
+<div class="loginPage" id="loginPage">
     <div class="loginBox">
 
-        <h1>💎 MY SERVICE</h1>
+        <div class="logo">
+            💎 MY <span>SERVICE</span>
+        </div>
 
-        <p>
-            خدمات حرفه‌ای مجازی و دیجیتال
-        </p>
+        <div class="subtitle">
+            🔐 ورود به پنل خدمات
+        </div>
 
         <input
             type="password"
             id="password"
-            placeholder="🔐 رمز ورود را وارد کنید"
-            autocomplete="off"
+            placeholder="رمز ورود را وارد کنید"
         >
 
-        <button
-            class="loginBtn"
-            onclick="login()"
-        >
-            🔓 ورود به پنل
+        <button class="loginBtn" onclick="login()">
+            🔓 ورود
         </button>
 
     </div>
-
 </div>
 
 
-<!-- ================= SERVICE PAGE ================= -->
-
+<!-- SERVICE PAGE -->
 <div id="servicePage">
 
     <div class="container">
 
         <div class="header">
-
             <h1>
                 💎 MY <span>SERVICE</span>
             </h1>
 
             <p>
-                خدمات حرفه‌ای مجازی و دیجیتال
+                خدمات ویژه با پشتیبانی مستقیم
             </p>
-
         </div>
 
-
-        <!-- ================= SERVICES ================= -->
 
         <div class="services">
 
-            <!-- 1 -->
-
+            <!-- ACCOUNT -->
             <div class="card">
-
-                <h2>
-                    🔐 هک اکانت
-                </h2>
+                <h2>🔐 هک اکانت</h2>
 
                 <p>
-                    خدمات بازیابی و تأمین امنیت اکانت‌های خودتان
+                    بازیابی و افزایش امنیت اکانت‌های خودت
+                    و راهنمایی برای برگرداندن حساب.
                 </p>
 
                 <button
                     class="orderBtn"
-                    onclick="openOrder('🔐 هک اکانت')"
-                >
+                    onclick="openOrder('🔐 هک اکانت')">
                     🛒 سفارش
                 </button>
-
             </div>
 
 
-            <!-- 2 -->
-
+            <!-- BOT -->
             <div class="card">
-
-                <h2>
-                    🤖 ساخت ربات
-                </h2>
+                <h2>🤖 ساخت ربات</h2>
 
                 <p>
-                    طراحی و ساخت ربات‌های اختصاصی متناسب با نیاز شما
+                    ساخت و راه‌اندازی ربات‌های اختصاصی
+                    متناسب با نیاز شما.
                 </p>
 
                 <button
                     class="orderBtn"
-                    onclick="openOrder('🤖 ساخت ربات')"
-                >
+                    onclick="openOrder('🤖 ساخت ربات')">
                     🛒 سفارش
                 </button>
-
             </div>
 
 
-            <!-- 3 -->
-
+            <!-- SOCIAL -->
             <div class="card">
-
-                <h2>
-                    📱 خدمات شبکه اجتماعی
-                </h2>
+                <h2>📱 خدمات شبکه اجتماعی</h2>
 
                 <p>
-                    خدمات و مدیریت محتوای شبکه‌های اجتماعی
+                    خدمات و راهنمایی مربوط به شبکه‌های اجتماعی
+                    و مدیریت بهتر صفحات.
                 </p>
 
                 <button
                     class="orderBtn"
-                    onclick="openOrder('📱 خدمات شبکه اجتماعی')"
-                >
+                    onclick="openOrder('📱 خدمات شبکه اجتماعی')">
                     🛒 سفارش
                 </button>
-
             </div>
 
 
-            <!-- 4 -->
-
+            <!-- RUBIKA -->
             <div class="card">
-
-                <h2>
-                    📱 رفع تعلیق روبیکا
-                </h2>
+                <h2>📱 رفع تعلیق روبیکا</h2>
 
                 <p>
-                    بررسی وضعیت حساب و راهنمایی برای پیگیری رفع تعلیق از مسیرهای رسمی روبیکا
+                    بررسی وضعیت حساب و راهنمایی برای
+                    پیگیری رفع تعلیق از مسیرهای رسمی روبیکا.
                 </p>
 
                 <button
                     class="orderBtn"
-                    onclick="openOrder('📱 رفع تعلیق روبیکا')"
-                >
+                    onclick="openOrder('📱 رفع تعلیق روبیکا')">
                     🛒 سفارش
                 </button>
-
             </div>
 
 
-            <!-- 5 -->
-
+            <!-- SUPPORT -->
             <div class="card">
-
-                <h2>
-                    💬 پشتیبانی
-                </h2>
+                <h2>💬 پشتیبانی</h2>
 
                 <p>
-                    برای ارتباط مستقیم و دریافت راهنمایی با ما در تماس باشید
+                    برای ارتباط مستقیم و دریافت پشتیبانی
+                    از طریق آیدی زیر اقدام کنید.
                 </p>
 
                 <a
-                    class="telegramBtn"
-                    href="https://t.me/Mehdi_nb09"
-                    target="_blank"
-                    style="display:block;text-align:center;margin-top:18px;"
-                >
-                    💬 ارتباط در تلگرام
+                    class="support"
+                    href="https://t.me/ADMMIJ09ADMIN"
+                    target="_blank">
+                    💬 ارتباط با پشتیبانی
                 </a>
-
             </div>
 
         </div>
 
 
-        <!-- ================= FREE HELP ================= -->
-
+        <!-- FREE HELP -->
         <div class="helpSection">
 
-            <div class="helpIcon">
-                🤝
-            </div>
+            <div class="helpIcon">🤝</div>
 
-            <h2>
-                کمک رایگان
-            </h2>
+            <h2>کمک رایگان</h2>
 
             <p>
                 اگر کاری داری که انجام دادنش برات سخته،
@@ -568,182 +436,172 @@ body{
 
             <button
                 class="helpBtn"
-                onclick="openHelp()"
-            >
+                onclick="openHelp()">
                 🆘 درخواست کمک رایگان
             </button>
 
         </div>
 
 
-        <!-- ================= SUPPORT ================= -->
-
-        <div class="support">
-
-            <p>
-                برای ثبت سفارش یا پشتیبانی می‌توانید مستقیماً در تلگرام پیام دهید.
-            </p>
-
-            <a
-                class="telegramBtn"
-                href="https://t.me/Mehdi_nb09"
-                target="_blank"
-            >
-                📩 @Mehdi_nb09
-            </a>
-
+        <div class="footer">
+            💎 MY SERVICE
+            <br>
+            📩 @ADMMIJ09ADMIN
         </div>
 
     </div>
-
 </div>
 
 
-<!-- ================= ORDER MODAL ================= -->
+<!-- ORDER MODAL -->
+<div class="modal" id="orderBox">
 
-<div id="orderBox">
+    <div class="modalBox">
 
-    <div class="orderModal">
-
-        <h2>
-            🛒 ثبت سفارش
-        </h2>
-
-        <div class="subtitle">
-            اطلاعات سفارش خود را وارد کنید
-        </div>
+        <h2>🛒 ثبت سفارش</h2>
 
         <div
-            class="selectedService"
-            id="selectedText"
-        >
-            خدمت انتخاب‌شده
+            class="selected"
+            id="selectedText">
         </div>
 
         <textarea
-            class="formTextarea"
             id="customerText"
-            placeholder="📝 توضیحات سفارش خود را بنویسید..."
-            maxlength="3000"
-        ></textarea>
+            rows="6"
+            placeholder="توضیحات سفارش خود را بنویسید...">
+        </textarea>
 
         <button
-            class="sendOrder"
-            onclick="sendOrder()"
-        >
+            class="sendBtn"
+            onclick="sendOrder()">
             📩 ارسال سفارش
         </button>
 
         <button
-            class="closeOrder"
-            onclick="closeOrder()"
-        >
-            بستن
+            class="closeBtn"
+            onclick="closeOrder()">
+            ❌ بستن
         </button>
 
     </div>
-
 </div>
 
 
-<!-- ================= HELP MODAL ================= -->
+<!-- HELP MODAL -->
+<div class="modal" id="helpBox">
 
-<div id="helpBox">
+    <div class="modalBox">
 
-    <div class="helpModal">
-
-        <h2>
-            🤝 درخواست کمک
-        </h2>
-
-        <div class="subtitle">
-            درخواستت رو با جزئیات بنویس.
-            اگر از دستمون بربیاد، بدون هزینه انجامش می‌دیم.
-        </div>
+        <h2>🤝 درخواست کمک رایگان</h2>
 
         <input
-            class="formInput"
             type="text"
             id="helpName"
-            placeholder="👤 نام یا اسم مستعار"
-            maxlength="80"
-        >
+            placeholder="نام یا اسم مستعار">
 
         <textarea
-            class="formTextarea"
             id="helpText"
-            placeholder="📝 دقیقاً برای چه کاری کمک می‌خواهید؟"
-            maxlength="2000"
-        ></textarea>
+            rows="7"
+            placeholder="درخواستت رو اینجا بنویس...">
+        </textarea>
 
         <button
-            class="sendHelp"
-            onclick="sendHelp()"
-        >
+            class="sendBtn"
+            onclick="sendHelp()">
             📩 ارسال درخواست کمک
         </button>
 
         <button
-            class="closeHelp"
-            onclick="closeHelp()"
-        >
-            بستن
+            class="closeBtn"
+            onclick="closeHelp()">
+            ❌ بستن
         </button>
 
     </div>
-
 </div>
 
 
 <script>
 
-/* ================= LOGIN ================= */
-
 const ACCESS_CODE = "MYFILM123";
 
+const TELEGRAM_USERNAME = "ADMMIJ09ADMIN";
+
+
+/* LOGIN */
 function login(){
 
     const password =
-        document.getElementById("password").value.trim();
+        document
+        .getElementById("password")
+        .value
+        .trim();
 
     if(password === ACCESS_CODE){
 
-        document.getElementById("loginPage").style.display = "none";
+        document
+        .getElementById("loginPage")
+        .style.display = "none";
 
-        document.getElementById("servicePage").style.display = "block";
+        document
+        .getElementById("servicePage")
+        .style.display = "block";
 
     }else{
 
         alert("❌ رمز ورود اشتباه است");
 
-        document.getElementById("password").value = "";
-
+        document
+        .getElementById("password")
+        .value = "";
     }
 }
 
 
-/* ================= ORDER ================= */
+/* ENTER KEY */
+document
+.getElementById("password")
+.addEventListener("keydown",function(event){
 
+    if(event.key === "Enter"){
+        login();
+    }
+
+});
+
+
+/* ORDER */
 let selectedService = "";
+
 
 function openOrder(service){
 
     selectedService = service;
 
-    document.getElementById("selectedText").innerText =
+    document
+    .getElementById("selectedText")
+    .innerText =
         "✅ خدمت انتخاب‌شده: " + service;
 
-    document.getElementById("customerText").value = "";
+    document
+    .getElementById("customerText")
+    .value = "";
 
-    document.getElementById("orderBox").style.display = "flex";
+    document
+    .getElementById("orderBox")
+    .style.display = "flex";
 }
 
 
 function closeOrder(){
 
-    document.getElementById("orderBox").style.display = "none";
+    document
+    .getElementById("orderBox")
+    .style.display = "none";
 
-    document.getElementById("customerText").value = "";
+    document
+    .getElementById("customerText")
+    .value = "";
 
     selectedService = "";
 }
@@ -752,133 +610,168 @@ function closeOrder(){
 function sendOrder(){
 
     const details =
-        document.getElementById("customerText").value.trim();
+        document
+        .getElementById("customerText")
+        .value
+        .trim();
+
 
     if(selectedService === ""){
 
         alert("⚠️ خدمت انتخاب نشده است");
-
         return;
     }
+
 
     if(details === ""){
 
         alert("⚠️ لطفاً توضیحات سفارش را بنویسید");
-
         return;
     }
+
 
     const message =
         "🛒 سفارش جدید MY SERVICE\n\n" +
         "📌 خدمت: " + selectedService + "\n\n" +
         "📝 توضیحات:\n" +
-        details + "\n\n" +
-        "👤 ارسال به: @Mehdi_nb09";
+        details +
+        "\n\n" +
+        "👤 ارسال به: @" +
+        TELEGRAM_USERNAME;
+
 
     const telegramURL =
-        "https://t.me/Mehdi_nb09?text=" +
+        "https://t.me/" +
+        TELEGRAM_USERNAME +
+        "?text=" +
         encodeURIComponent(message);
 
-    window.open(telegramURL,"_blank");
+
+    window.open(
+        telegramURL,
+        "_blank"
+    );
 }
 
 
-/* ================= FREE HELP ================= */
-
+/* FREE HELP */
 function openHelp(){
 
-    document.getElementById("helpName").value = "";
+    document
+    .getElementById("helpName")
+    .value = "";
 
-    document.getElementById("helpText").value = "";
+    document
+    .getElementById("helpText")
+    .value = "";
 
-    document.getElementById("helpBox").style.display = "flex";
+    document
+    .getElementById("helpBox")
+    .style.display = "flex";
 }
 
 
 function closeHelp(){
 
-    document.getElementById("helpBox").style.display = "none";
+    document
+    .getElementById("helpBox")
+    .style.display = "none";
 
-    document.getElementById("helpName").value = "";
+    document
+    .getElementById("helpName")
+    .value = "";
 
-    document.getElementById("helpText").value = "";
+    document
+    .getElementById("helpText")
+    .value = "";
 }
 
 
 function sendHelp(){
 
     const name =
-        document.getElementById("helpName").value.trim();
+        document
+        .getElementById("helpName")
+        .value
+        .trim();
 
     const helpText =
-        document.getElementById("helpText").value.trim();
+        document
+        .getElementById("helpText")
+        .value
+        .trim();
+
 
     if(name === ""){
 
-        alert("⚠️ لطفاً نام یا اسم مستعار خود را وارد کنید");
+        alert(
+            "⚠️ لطفاً نام یا اسم مستعار خود را وارد کنید"
+        );
 
         return;
     }
+
 
     if(helpText === ""){
 
-        alert("⚠️ لطفاً درخواست کمک خود را بنویسید");
+        alert(
+            "⚠️ لطفاً درخواست کمک خود را بنویسید"
+        );
 
         return;
     }
 
+
     const message =
         "🤝 درخواست کمک رایگان MY SERVICE\n\n" +
-        "👤 نام: " + name + "\n\n" +
+        "👤 نام: " +
+        name +
+        "\n\n" +
         "📝 درخواست:\n" +
-        helpText + "\n\n" +
-        "📩 دریافت‌کننده: @Mehdi_nb09";
+        helpText +
+        "\n\n" +
+        "📩 دریافت‌کننده: @" +
+        TELEGRAM_USERNAME;
+
 
     const telegramURL =
-        "https://t.me/Mehdi_nb09?text=" +
+        "https://t.me/" +
+        TELEGRAM_USERNAME +
+        "?text=" +
         encodeURIComponent(message);
 
-    window.open(telegramURL,"_blank");
+
+    window.open(
+        telegramURL,
+        "_blank"
+    );
 }
 
 
-/* ================= ENTER LOGIN ================= */
-
+/* CLOSE MODALS BY CLICKING OUTSIDE */
 document
-    .getElementById("password")
-    .addEventListener("keydown",function(event){
+.getElementById("orderBox")
+.addEventListener("click",function(event){
 
-        if(event.key === "Enter"){
-            login();
-        }
+    if(event.target === this){
+        closeOrder();
+    }
 
-    });
-
-
-/* ================= CLOSE MODALS ================= */
-
-document
-    .getElementById("orderBox")
-    .addEventListener("click",function(event){
-
-        if(event.target === this){
-            closeOrder();
-        }
-
-    });
+});
 
 
 document
-    .getElementById("helpBox")
-    .addEventListener("click",function(event){
+.getElementById("helpBox")
+.addEventListener("click",function(event){
 
-        if(event.target === this){
-            closeHelp();
-        }
+    if(event.target === this){
+        closeHelp();
+    }
 
-    });
+});
 
 </script>
 
 </body>
-            </html>
+</html>
+```
