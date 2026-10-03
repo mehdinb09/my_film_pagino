@@ -3,253 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>💎 MY SERVICE VIP</title>
+<title>MY SERVICE VIP 💎</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    font-family:tahoma,Arial;
-}
-
 body{
     margin:0;
-    min-height:100vh;
-    background:linear-gradient(135deg,#111827,#1f2937);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    font-family:tahoma;
+    background:#101827;
     color:white;
+    text-align:center;
 }
 
 .box{
     width:90%;
-    max-width:380px;
-    background:#ffffff15;
-    backdrop-filter:blur(15px);
+    max-width:450px;
+    margin:40px auto;
+    background:#283346;
     padding:30px;
-    border-radius:25px;
-    border:1px solid #ffffff30;
-    text-align:center;
+    border-radius:30px;
 }
 
-.logo{
-    font-size:35px;
-    font-weight:bold;
-    margin-bottom:10px;
+h1{
+    color:#00d9ff;
+    font-size:40px;
 }
 
-.logo span{
-    color:#00e5ff;
-}
-
-.subtitle{
-    margin-bottom:25px;
-    color:#ddd;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    margin:10px 0;
-    border-radius:12px;
-    border:none;
-    outline:none;
-    font-size:16px;
+.card{
+    background:#3b4659;
+    margin:15px 0;
+    padding:20px;
+    border-radius:20px;
 }
 
 button{
     width:100%;
     padding:15px;
-    margin-top:15px;
     border:0;
-    border-radius:12px;
-    background:linear-gradient(135deg,#00e5ff,#2563eb);
-    color:white;
+    border-radius:15px;
     font-size:18px;
     cursor:pointer;
+    background:#00c853;
+    color:white;
 }
 
-button:hover{
-    transform:scale(1.03);
-}
-
-#servicePage{
-    display:none;
-}
-
-.card{
-    background:#ffffff18;
-    padding:20px;
-    border-radius:20px;
-    margin-top:15px;
+.off{
+    background:#777;
+    cursor:not-allowed;
 }
 
 .logout{
-    background:#ef4444;
+    background:#f44336;
+    margin-top:20px;
 }
-
 </style>
 </head>
 
-
 <body>
 
+<div class="box" id="login">
 
-<div class="box" id="loginPage">
+<h1>💎 MY SERVICE VIP</h1>
 
-<div class="logo">
-💎 MY <span>SERVICE</span>
+<p>ورود موفق بود ✅</p>
+
+<div class="card">
+<h2>خدمات ویژه 🚀</h2>
+<p>دسترسی شما به پنل VIP فعال شد</p>
 </div>
 
-<div class="subtitle">
-🔐 ورود به پنل خدمات VIP
-</div>
-
-
-<input id="email" type="email" placeholder="ایمیل را وارد کنید">
-
-<input id="password" type="password" placeholder="رمز عبور را وارد کنید">
-
-
-<button onclick="login()">
-🔓 ورود
-</button>
-
+<button onclick="showPanel()">ورود به خدمات</button>
 
 </div>
-<div class="box" id="servicePage">
 
-<div class="logo">
-💎 MY <span>SERVICE VIP</span>
-</div>
 
-<div class="subtitle">
-✅ ورود موفق بود
+<div class="box" id="panel" style="display:none">
+
+<h1>💎 VIP PANEL</h1>
+
+
+<div class="card">
+<h2>📱 بررسی و پیگیری حساب روبیکا</h2>
+<button>سفارش</button>
 </div>
 
 
 <div class="card">
-<h3>🚀 خدمات ویژه</h3>
-
-<p>
-دسترسی به پنل VIP فعال شد.
-</p>
-
-<p>
-💎 حساب شما تایید شده است.
-</p>
-
+<h2>🔒 رفع مشکل تعلیق حساب</h2>
+<button>به زودی</button>
 </div>
 
 
-<button class="logout" onclick="logout()">
-🚪 خروج
+<div class="card">
+<h2>⭐ خدمات دیگر</h2>
+<button class="off">به زودی</button>
+</div>
+
+
+<button class="logout" onclick="location.reload()">
+خروج 🚪
 </button>
 
 </div>
 
 
-
-<!-- Firebase -->
-
-<script type="module">
-
-import { initializeApp } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-
-import { 
-getAuth,
-signInWithEmailAndPassword,
-onAuthStateChanged,
-signOut
+<script>
+function showPanel(){
+document.getElementById("login").style.display="none";
+document.getElementById("panel").style.display="block";
 }
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyAuPOtq9wxWcHMWcAFJNq2pZFWNWw2gKh4",
-
-authDomain: "my-service-vip.firebaseapp.com",
-
-databaseURL: "https://my-service-vip-default-rtdb.firebaseio.com",
-
-projectId: "my-service-vip",
-
-storageBucket: "my-service-vip.firebasestorage.app",
-
-messagingSenderId: "635792898278",
-
-appId: "1:635792898278:web:7003f31df2832cc793e327"
-
-};
-
-
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-
-
-window.login = function(){
-
-const email = document.getElementById("email").value;
-
-const password = document.getElementById("password").value;
-
-
-signInWithEmailAndPassword(auth,email,password)
-
-.then(()=>{
-
-document.getElementById("loginPage").style.display="none";
-
-document.getElementById("servicePage").style.display="block";
-
-})
-
-
-.catch((error)=>{
-
-alert("❌ ورود ناموفق است\nرمز یا ایمیل اشتباه است");
-
-});
-
-};
-
-
-
-window.logout=function(){
-
-signOut(auth).then(()=>{
-
-location.reload();
-
-});
-
-};
-
-
-
-onAuthStateChanged(auth,(user)=>{
-
-if(user){
-
-document.getElementById("loginPage").style.display="none";
-
-document.getElementById("servicePage").style.display="block";
-
-}
-
-});
-
-
 </script>
-
 
 </body>
 </html>
