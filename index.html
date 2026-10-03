@@ -1,796 +1,255 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY SERVICE</title>
+
+<title>💎 MY SERVICE VIP</title>
 
 <style>
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Tahoma,Arial,sans-serif;
+    font-family:tahoma,Arial;
 }
 
 body{
+    margin:0;
     min-height:100vh;
-    background:
-        radial-gradient(circle at top,#420000 0%,#160000 35%,#050505 75%);
-    color:white;
-}
-
-.container{
-    width:92%;
-    max-width:1000px;
-    margin:auto;
-}
-
-.loginPage{
-    min-height:100vh;
+    background:linear-gradient(135deg,#111827,#1f2937);
     display:flex;
     align-items:center;
     justify-content:center;
+    color:white;
 }
 
-.loginBox{
-    width:100%;
-    max-width:430px;
-    background:rgba(15,15,15,.94);
-    border:1px solid #7b0000;
+.box{
+    width:90%;
+    max-width:380px;
+    background:#ffffff15;
+    backdrop-filter:blur(15px);
+    padding:30px;
     border-radius:25px;
-    padding:35px 25px;
+    border:1px solid #ffffff30;
     text-align:center;
-    box-shadow:0 0 35px rgba(255,0,0,.25);
 }
 
 .logo{
-    font-size:34px;
+    font-size:35px;
     font-weight:bold;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .logo span{
-    color:#ff2020;
+    color:#00e5ff;
 }
 
 .subtitle{
-    color:#aaa;
     margin-bottom:25px;
+    color:#ddd;
 }
 
-input,textarea{
+input{
     width:100%;
-    background:#090909;
-    color:white;
-    border:1px solid #550000;
-    border-radius:14px;
     padding:15px;
+    margin:10px 0;
+    border-radius:12px;
+    border:none;
     outline:none;
-    margin-bottom:14px;
-    font-size:15px;
-}
-
-input:focus,textarea:focus{
-    border-color:#ff2020;
-    box-shadow:0 0 10px rgba(255,0,0,.2);
+    font-size:16px;
 }
 
 button{
-    border:none;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.loginBtn{
     width:100%;
     padding:15px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#ff2020,#8b0000);
+    margin-top:15px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#00e5ff,#2563eb);
     color:white;
-    font-size:17px;
-    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
 }
 
-.loginBtn:hover{
-    transform:scale(1.02);
+button:hover{
+    transform:scale(1.03);
 }
 
 #servicePage{
     display:none;
-    padding:35px 0;
-}
-
-.header{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.header h1{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.header h1 span{
-    color:#ff2020;
-}
-
-.header p{
-    color:#aaa;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
 }
 
 .card{
-    background:linear-gradient(145deg,#151515,#090909);
-    border:1px solid #4c0000;
-    border-radius:22px;
-    padding:24px;
-    box-shadow:0 0 20px rgba(255,0,0,.08);
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    border-color:#ff2020;
-    box-shadow:0 0 25px rgba(255,0,0,.18);
-}
-
-.card h2{
-    font-size:21px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#aaa;
-    line-height:1.8;
-    font-size:14px;
-    min-height:50px;
-}
-
-.orderBtn{
-    width:100%;
-    margin-top:17px;
-    padding:13px;
-    border-radius:13px;
-    background:#a00000;
-    color:white;
-    font-weight:bold;
-}
-
-.orderBtn:hover{
-    background:#e00000;
-}
-
-.support{
-    text-decoration:none;
-    display:block;
-    margin-top:17px;
-    text-align:center;
-    padding:13px;
-    border-radius:13px;
-    background:#a00000;
-    color:white;
-    font-weight:bold;
-}
-
-.helpSection{
-    margin-top:30px;
-    background:linear-gradient(145deg,#171717,#090909);
-    border:1px solid #4c0000;
-    border-radius:24px;
-    padding:30px 22px;
-    text-align:center;
-}
-
-.helpIcon{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.helpSection h2{
-    margin-bottom:10px;
-}
-
-.helpSection p{
-    color:#aaa;
-    line-height:2;
-}
-
-.helpBtn{
-    margin-top:20px;
-    padding:14px 25px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#ff2020,#8b0000);
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-}
-
-.footer{
-    text-align:center;
-    color:#777;
-    margin-top:35px;
-    padding-bottom:20px;
-}
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.82);
-    display:none;
-    align-items:center;
-    justify-content:center;
+    background:#ffffff18;
     padding:20px;
-    z-index:999;
+    border-radius:20px;
+    margin-top:15px;
 }
 
-.modalBox{
-    width:100%;
-    max-width:470px;
-    background:#101010;
-    border:1px solid #770000;
-    border-radius:23px;
-    padding:25px;
-    box-shadow:0 0 35px rgba(255,0,0,.25);
+.logout{
+    background:#ef4444;
 }
 
-.modalBox h2{
-    margin-bottom:15px;
-}
-
-.selected{
-    background:#190000;
-    border:1px solid #5d0000;
-    padding:13px;
-    border-radius:12px;
-    margin-bottom:15px;
-    color:#ff7777;
-}
-
-.sendBtn{
-    width:100%;
-    padding:14px;
-    border-radius:13px;
-    background:#009b45;
-    color:white;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.closeBtn{
-    width:100%;
-    padding:13px;
-    border-radius:13px;
-    background:#292929;
-    color:white;
-}
-
-@media(max-width:650px){
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .header h1{
-        font-size:29px;
-    }
-
-    .card h2{
-        font-size:19px;
-    }
-}
 </style>
 </head>
 
+
 <body>
 
-<!-- LOGIN -->
-<div class="loginPage" id="loginPage">
-    <div class="loginBox">
 
-        <div class="logo">
-            💎 MY <span>SERVICE</span>
-        </div>
+<div class="box" id="loginPage">
 
-        <div class="subtitle">
-            🔐 ورود به پنل خدمات
-        </div>
+<div class="logo">
+💎 MY <span>SERVICE</span>
+</div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="رمز ورود را وارد کنید"
-        >
-
-        <button class="loginBtn" onclick="login()">
-            🔓 ورود
-        </button>
-
-    </div>
+<div class="subtitle">
+🔐 ورود به پنل خدمات VIP
 </div>
 
 
-<!-- SERVICE PAGE -->
-<div id="servicePage">
+<input id="email" type="email" placeholder="ایمیل را وارد کنید">
 
-    <div class="container">
-
-        <div class="header">
-            <h1>
-                💎 MY <span>SERVICE</span>
-            </h1>
-
-            <p>
-                خدمات ویژه با پشتیبانی مستقیم
-            </p>
-        </div>
+<input id="password" type="password" placeholder="رمز عبور را وارد کنید">
 
 
-        <div class="services">
-
-            <!-- ACCOUNT -->
-            <div class="card">
-                <h2>🔐 هک اکانت</h2>
-
-                <p>
-                    بازیابی و افزایش امنیت اکانت‌های خودت
-                    و راهنمایی برای برگرداندن حساب.
-                </p>
-
-                <button
-                    class="orderBtn"
-                    onclick="openOrder('🔐 هک اکانت')">
-                    🛒 سفارش
-                </button>
-            </div>
+<button onclick="login()">
+🔓 ورود
+</button>
 
 
-            <!-- BOT -->
-            <div class="card">
-                <h2>🤖 ساخت ربات</h2>
+</div>
+<div class="box" id="servicePage">
 
-                <p>
-                    ساخت و راه‌اندازی ربات‌های اختصاصی
-                    متناسب با نیاز شما.
-                </p>
+<div class="logo">
+💎 MY <span>SERVICE VIP</span>
+</div>
 
-                <button
-                    class="orderBtn"
-                    onclick="openOrder('🤖 ساخت ربات')">
-                    🛒 سفارش
-                </button>
-            </div>
-
-
-            <!-- SOCIAL -->
-            <div class="card">
-                <h2>📱 خدمات شبکه اجتماعی</h2>
-
-                <p>
-                    خدمات و راهنمایی مربوط به شبکه‌های اجتماعی
-                    و مدیریت بهتر صفحات.
-                </p>
-
-                <button
-                    class="orderBtn"
-                    onclick="openOrder('📱 خدمات شبکه اجتماعی')">
-                    🛒 سفارش
-                </button>
-            </div>
-
-
-            <!-- RUBIKA -->
-            <div class="card">
-                <h2>📱 رفع تعلیق روبیکا</h2>
-
-                <p>
-                    بررسی وضعیت حساب و راهنمایی برای
-                    پیگیری رفع تعلیق از مسیرهای رسمی روبیکا.
-                </p>
-
-                <button
-                    class="orderBtn"
-                    onclick="openOrder('📱 رفع تعلیق روبیکا')">
-                    🛒 سفارش
-                </button>
-            </div>
-
-
-            <!-- SUPPORT -->
-            <div class="card">
-                <h2>💬 پشتیبانی</h2>
-
-                <p>
-                    برای ارتباط مستقیم و دریافت پشتیبانی
-                    از طریق آیدی زیر اقدام کنید.
-                </p>
-
-                <a
-                    class="support"
-                    href="https://t.me/ADMMIJ09ADMIN"
-                    target="_blank">
-                    💬 ارتباط با پشتیبانی
-                </a>
-            </div>
-
-        </div>
-
-
-        <!-- FREE HELP -->
-        <div class="helpSection">
-
-            <div class="helpIcon">🤝</div>
-
-            <h2>کمک رایگان</h2>
-
-            <p>
-                اگر کاری داری که انجام دادنش برات سخته،
-                درخواستت رو بنویس.<br>
-                اگر از دستمون بربیاد، بدون هزینه کمکت می‌کنیم.
-            </p>
-
-            <button
-                class="helpBtn"
-                onclick="openHelp()">
-                🆘 درخواست کمک رایگان
-            </button>
-
-        </div>
-
-
-        <div class="footer">
-            💎 MY SERVICE
-            <br>
-            📩 @ADMMIJ09ADMIN
-        </div>
-
-    </div>
+<div class="subtitle">
+✅ ورود موفق بود
 </div>
 
 
-<!-- ORDER MODAL -->
-<div class="modal" id="orderBox">
+<div class="card">
+<h3>🚀 خدمات ویژه</h3>
 
-    <div class="modalBox">
+<p>
+دسترسی به پنل VIP فعال شد.
+</p>
 
-        <h2>🛒 ثبت سفارش</h2>
+<p>
+💎 حساب شما تایید شده است.
+</p>
 
-        <div
-            class="selected"
-            id="selectedText">
-        </div>
-
-        <textarea
-            id="customerText"
-            rows="6"
-            placeholder="توضیحات سفارش خود را بنویسید...">
-        </textarea>
-
-        <button
-            class="sendBtn"
-            onclick="sendOrder()">
-            📩 ارسال سفارش
-        </button>
-
-        <button
-            class="closeBtn"
-            onclick="closeOrder()">
-            ❌ بستن
-        </button>
-
-    </div>
 </div>
 
 
-<!-- HELP MODAL -->
-<div class="modal" id="helpBox">
+<button class="logout" onclick="logout()">
+🚪 خروج
+</button>
 
-    <div class="modalBox">
-
-        <h2>🤝 درخواست کمک رایگان</h2>
-
-        <input
-            type="text"
-            id="helpName"
-            placeholder="نام یا اسم مستعار">
-
-        <textarea
-            id="helpText"
-            rows="7"
-            placeholder="درخواستت رو اینجا بنویس...">
-        </textarea>
-
-        <button
-            class="sendBtn"
-            onclick="sendHelp()">
-            📩 ارسال درخواست کمک
-        </button>
-
-        <button
-            class="closeBtn"
-            onclick="closeHelp()">
-            ❌ بستن
-        </button>
-
-    </div>
 </div>
 
 
-<script>
 
-const ACCESS_CODE = "MYFILM123";
+<!-- Firebase -->
 
-const TELEGRAM_USERNAME = "ADMMIJ09ADMIN";
-
-
-/* LOGIN */
-function login(){
-
-    const password =
-        document
-        .getElementById("password")
-        .value
-        .trim();
-
-    if(password === ACCESS_CODE){
-
-        document
-        .getElementById("loginPage")
-        .style.display = "none";
-
-        document
-        .getElementById("servicePage")
-        .style.display = "block";
-
-    }else{
-
-        alert("❌ رمز ورود اشتباه است");
-
-        document
-        .getElementById("password")
-        .value = "";
-    }
-}
-
-
-/* ENTER KEY */
-document
-.getElementById("password")
-.addEventListener("keydown",function(event){
-
-    if(event.key === "Enter"){
-        login();
-    }
-
-});
-
-
-/* ORDER */
-let selectedService = "";
-
-
-function openOrder(service){
-
-    selectedService = service;
-
-    document
-    .getElementById("selectedText")
-    .innerText =
-        "✅ خدمت انتخاب‌شده: " + service;
-
-    document
-    .getElementById("customerText")
-    .value = "";
-
-    document
-    .getElementById("orderBox")
-    .style.display = "flex";
-}
-
-
-function closeOrder(){
-
-    document
-    .getElementById("orderBox")
-    .style.display = "none";
-
-    document
-    .getElementById("customerText")
-    .value = "";
-
-    selectedService = "";
-}
-
-
-function sendOrder(){
-
-    const details =
-        document
-        .getElementById("customerText")
-        .value
-        .trim();
-
-
-    if(selectedService === ""){
-
-        alert("⚠️ خدمت انتخاب نشده است");
-        return;
-    }
-
-
-    if(details === ""){
-
-        alert("⚠️ لطفاً توضیحات سفارش را بنویسید");
-        return;
-    }
-
-
-    const message =
-        "🛒 سفارش جدید MY SERVICE\n\n" +
-        "📌 خدمت: " + selectedService + "\n\n" +
-        "📝 توضیحات:\n" +
-        details +
-        "\n\n" +
-        "👤 ارسال به: @" +
-        TELEGRAM_USERNAME;
-
-
-    const telegramURL =
-        "https://t.me/" +
-        TELEGRAM_USERNAME +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(
-        telegramURL,
-        "_blank"
-    );
-}
-
-
-/* FREE HELP */
-function openHelp(){
-
-    document
-    .getElementById("helpName")
-    .value = "";
-
-    document
-    .getElementById("helpText")
-    .value = "";
-
-    document
-    .getElementById("helpBox")
-    .style.display = "flex";
-}
-
-
-function closeHelp(){
-
-    document
-    .getElementById("helpBox")
-    .style.display = "none";
-
-    document
-    .getElementById("helpName")
-    .value = "";
-
-    document
-    .getElementById("helpText")
-    .value = "";
-}
-
-
-function sendHelp(){
-
-    const name =
-        document
-        .getElementById("helpName")
-        .value
-        .trim();
-
-    const helpText =
-        document
-        .getElementById("helpText")
-        .value
-        .trim();
-
-
-    if(name === ""){
-
-        alert(
-            "⚠️ لطفاً نام یا اسم مستعار خود را وارد کنید"
-        );
-
-        return;
-    }
-
-
-    if(helpText === ""){
-
-        alert(
-            "⚠️ لطفاً درخواست کمک خود را بنویسید"
-        );
-
-        return;
-    }
-
-
-    const message =
-        "🤝 درخواست کمک رایگان MY SERVICE\n\n" +
-        "👤 نام: " +
-        name +
-        "\n\n" +
-        "📝 درخواست:\n" +
-        helpText +
-        "\n\n" +
-        "📩 دریافت‌کننده: @" +
-        TELEGRAM_USERNAME;
-
-
-    const telegramURL =
-        "https://t.me/" +
-        TELEGRAM_USERNAME +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-    window.open(
-        telegramURL,
-        "_blank"
-    );
-}
-
-
-/* CLOSE MODALS BY CLICKING OUTSIDE */
-document
-.getElementById("orderBox")
-.addEventListener("click",function(event){
-
-    if(event.target === this){
-        closeOrder();
-    }
-
-});
-
-
-document
-.getElementById("helpBox")
-.addEventListener("click",function(event){
-
-    if(event.target === this){
-        closeHelp();
-    }
-
-});
-
-</script>
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAuPOtq9wxWcHMWcAFJNq2pZFWNWw2gKh4",
-    authDomain: "my-service-vip.firebaseapp.com",
-    databaseURL: "https://my-service-vip-default-rtdb.firebaseio.com",
-    projectId: "my-service-vip",
-    storageBucket: "my-service-vip.firebasestorage.app",
-    messagingSenderId: "635792898278",
-    appId: "1:635792898278:web:7003f31df2832cc793e327"
-  };
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+
+import { 
+getAuth,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAuPOtq9wxWcHMWcAFJNq2pZFWNWw2gKh4",
+
+authDomain: "my-service-vip.firebaseapp.com",
+
+databaseURL: "https://my-service-vip-default-rtdb.firebaseio.com",
+
+projectId: "my-service-vip",
+
+storageBucket: "my-service-vip.firebasestorage.app",
+
+messagingSenderId: "635792898278",
+
+appId: "1:635792898278:web:7003f31df2832cc793e327"
+
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+
+window.login = function(){
+
+const email = document.getElementById("email").value;
+
+const password = document.getElementById("password").value;
+
+
+signInWithEmailAndPassword(auth,email,password)
+
+.then(()=>{
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("servicePage").style.display="block";
+
+})
+
+
+.catch((error)=>{
+
+alert("❌ ورود ناموفق است\nرمز یا ایمیل اشتباه است");
+
+});
+
+};
+
+
+
+window.logout=function(){
+
+signOut(auth).then(()=>{
+
+location.reload();
+
+});
+
+};
+
+
+
+onAuthStateChanged(auth,(user)=>{
+
+if(user){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("servicePage").style.display="block";
+
+}
+
+});
+
+
 </script>
+
+
 </body>
 </html>
-```
