@@ -22,7 +22,7 @@ color:white;
 
 .container{
 width:92%;
-max-width:850px;
+max-width:800px;
 margin:auto;
 padding:25px;
 }
@@ -32,7 +32,7 @@ padding:25px;
 text-align:center;
 font-size:45px;
 font-weight:bold;
-margin:30px 0;
+margin:35px 0;
 }
 
 .logo span{
@@ -41,15 +41,13 @@ color:#ff2020;
 
 
 .card{
-
 background:linear-gradient(145deg,#171717,#090909);
 border:1px solid #700000;
 border-radius:25px;
 padding:30px;
-margin:20px 0;
+margin:25px 0;
 text-align:center;
 box-shadow:0 0 25px rgba(255,0,0,.15);
-
 }
 
 
@@ -71,7 +69,6 @@ line-height:2;
 
 
 input{
-
 width:100%;
 padding:15px;
 margin:10px 0;
@@ -80,12 +77,10 @@ border:1px solid #700000;
 border-radius:15px;
 color:white;
 font-size:17px;
-
 }
 
 
 button{
-
 width:100%;
 padding:15px;
 border:0;
@@ -95,15 +90,17 @@ color:white;
 font-size:18px;
 cursor:pointer;
 margin-top:10px;
-
 }
 
 
-button:disabled{
+button:hover{
+transform:scale(1.02);
+}
 
+
+.disabled{
 background:#555;
 cursor:not-allowed;
-
 }
 
 
@@ -113,33 +110,21 @@ color:white;
 }
 
 
-#codeBox{
-
+#panel{
 display:none;
-
-}
-
-
-#services{
-
-display:none;
-
 }
 
 
 .footer{
-
 text-align:center;
 color:#777;
 padding:30px;
-font-size:18px;
-
 }
+
 
 </style>
 
 </head>
-
 
 <body>
 
@@ -152,9 +137,11 @@ font-size:18px;
 </div>
 
 
+
 <!-- LOGIN -->
 
-<div class="card" id="loginBox">
+<div class="card" id="login">
+
 
 <div class="icon">
 🔐
@@ -162,39 +149,25 @@ font-size:18px;
 
 
 <h2>
-ورود به پنل
+ورود به پنل VIP
 </h2>
 
 
-<input id="phone" placeholder="+989xxxxxxxxx">
+<input id="username" placeholder="نام کاربری">
 
 
-<button onclick="sendCode()">
-📩 ارسال کد
-</button>
+<input id="password" type="password" placeholder="رمز عبور">
 
 
-
-<div id="codeBox">
-
-
-<input id="code" placeholder="کد تایید">
-
-
-<button onclick="verifyCode()">
-✅ تایید و ورود
+<button onclick="login()">
+ورود 🔓
 </button>
 
 
 </div>
+<!-- PANEL -->
 
-
-<div id="recaptcha"></div>
-
-
-</div><!-- SERVICES -->
-
-<div id="services">
+<div id="panel">
 
 
 <div class="card">
@@ -207,7 +180,7 @@ font-size:18px;
 این سرویس به زودی فعال می‌شود.
 </p>
 
-<button disabled>
+<button class="disabled" disabled>
 ⏳ به زودی
 </button>
 
@@ -225,7 +198,7 @@ font-size:18px;
 این سرویس به زودی فعال می‌شود.
 </p>
 
-<button disabled>
+<button class="disabled" disabled>
 ⏳ به زودی
 </button>
 
@@ -260,7 +233,7 @@ font-size:18px;
 <h2>خدمات مجازی</h2>
 
 <p>
-ارائه خدمات مجازی و دیجیتال.
+انجام خدمات مجازی و دیجیتال.
 </p>
 
 <button>
@@ -301,7 +274,7 @@ font-size:18px;
 
 <p>
 اگر کاری داری که نیاز به راهنمایی دارد،
-درخواست خودت را ارسال کن.
+درخواست خود را ارسال کن.
 </p>
 
 <button>
@@ -313,170 +286,87 @@ font-size:18px;
 </div>
 
 
+
 <div class="footer">
 
 💎 MY SERVICE VIP
+
 <br>
+
 📩 @ADMMIJ09ADMIN
 
 </div>
 
 
 </div>
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+<script>
 
 
-import {
-getAuth,
-RecaptchaVerifier,
-signInWithPhoneNumber
-}
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+// کاربران سایت
+// برای هر خریدار یک مورد جدید اضافه کن
 
+const users = [
 
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyAuPOtq9wxWcHMWcAFJNq2pZFWNWw2gKh4",
-
-authDomain: "my-service-vip.firebaseapp.com",
-
-databaseURL: "https://my-service-vip-default-rtdb.firebaseio.com",
-
-projectId: "my-service-vip",
-
-storageBucket: "my-service-vip.firebasestorage.app",
-
-messagingSenderId: "635792898278",
-
-appId: "1:635792898278:web:7003f31df2832cc793e327"
-
-};
-
-
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-
-let confirmationResult;
-
-
-
-window.sendCode = function(){
-
-
-let phone =
-document.getElementById("phone").value.trim();
-
-
-
-if(phone === ""){
-
-alert("شماره را وارد کنید");
-
-return;
-
-}
-
-
-
-window.recaptchaVerifier =
-new RecaptchaVerifier(
-auth,
-"recaptcha",
 {
-size:"invisible"
+username:"user1",
+password:"12345"
+},
+
+{
+username:"vip2",
+password:"67890"
 }
+
+];
+
+
+
+function login(){
+
+
+let username =
+document.getElementById("username").value.trim();
+
+
+let password =
+document.getElementById("password").value.trim();
+
+
+
+let found = users.find(user =>
+
+user.username === username &&
+
+user.password === password
+
 );
 
 
 
-signInWithPhoneNumber(
-auth,
-phone,
-window.recaptchaVerifier
-)
-
-.then((result)=>{
+if(found){
 
 
-confirmationResult = result;
+document.getElementById("login")
+.style.display="none";
 
 
-alert("کد ارسال شد ✅");
-
-
-document.getElementById("codeBox")
+document.getElementById("panel")
 .style.display="block";
-
-
-})
-
-.catch((error)=>{
-
-alert(error.message);
-
-});
-
-
-}
-
-
-
-
-window.verifyCode=function(){
-
-
-let code =
-document.getElementById("code").value.trim();
-
-
-
-if(code===""){
-
-alert("کد را وارد کنید");
-
-return;
-
-}
-
-
-
-confirmationResult.confirm(code)
-
-.then(()=>{
 
 
 alert("ورود موفق بود ✅");
 
 
-// مخفی کردن صفحه ورود
+}
 
-document.getElementById("loginBox")
-.style.display="none";
-
-
-// نمایش خدمات
-
-document.getElementById("services")
-.style.display="block";
+else{
 
 
-})
+alert("❌ نام کاربری یا رمز اشتباه است");
 
 
-.catch(()=>{
+}
 
-
-alert("کد اشتباه است ❌");
-
-
-});
 
 
 }
@@ -485,6 +375,8 @@ alert("کد اشتباه است ❌");
 
 </script>
 
+
+</div>
 
 </body>
 </html>
